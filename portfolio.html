@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #141210;
+      --paper: #f7f4ee;
+      --cream: #edeae1;
+      --teal: #1a6b5a;
+      --teal-pale: #d4e8e3;
+      --yellow: #e8d44d;
+      --muted: #8a8070;
+      --border: #d8d2c4;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink); overflow-x:hidden; }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:1.1rem 4rem; background:var(--paper); border-bottom:1.5px solid var(--ink); }
+    .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1rem; letter-spacing:.04em; text-decoration:none; color:var(--ink); display:flex; align-items:center; gap:.5rem; }
+    .nav-logo-dot { width:8px; height:8px; border-radius:50%; background:var(--teal); display:inline-block; }
+    nav ul { list-style:none; display:flex; gap:2.5rem; }
+    nav ul a { text-decoration:none; color:var(--muted); font-size:.85rem; font-weight:400; letter-spacing:.02em; transition:color .2s; }
+    nav ul a:hover { color:var(--ink); }
+    .nav-cta { background:var(--ink); color:var(--paper); padding:.5rem 1.4rem; font-size:.82rem; font-weight:600; letter-spacing:.04em; text-decoration:none; border:1.5px solid var(--ink); transition:all .2s; }
+    .nav-cta:hover { background:transparent; color:var(--ink); }
+
+    #hero { min-height:100vh; padding:8rem 4rem 5rem; display:flex; align-items:flex-end; position:relative; overflow:hidden; background:var(--paper); }
+    .hero-bg-text { position:absolute; top:50%; left:-2%; transform:translateY(-50%); font-family:'Instrument Serif',serif; font-size:clamp(12rem,22vw,20rem); color:transparent; -webkit-text-stroke:1.5px var(--border); white-space:nowrap; pointer-events:none; user-select:none; line-height:1; z-index:0; }
+    .hero-content { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:4rem; width:100%; max-width:1300px; margin:0 auto; align-items:end; }
+    .hero-tag { display:inline-block; border:1.5px solid var(--ink); padding:.3rem .9rem; font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; margin-bottom:2rem; color:var(--ink); }
+    .hero-name { font-family:'Instrument Serif',serif; font-size:clamp(4rem,9vw,7.5rem); line-height:.95; color:var(--ink); margin-bottom:1.5rem; }
+    .hero-name em { font-style:italic; color:var(--teal); }
+    .hero-desc { font-size:1rem; line-height:1.75; color:var(--muted); max-width:420px; margin-bottom:2.5rem; font-weight:300; }
+    .hero-actions { display:flex; gap:1rem; align-items:center; }
+    .btn-primary { background:var(--teal); color:white; padding:.8rem 2rem; font-family:'DM Sans',sans-serif; font-size:.85rem; font-weight:600; text-decoration:none; letter-spacing:.04em; border:1.5px solid var(--teal); transition:all .2s; display:inline-block; cursor:pointer; }
+    .btn-primary:hover { background:transparent; color:var(--teal); }
+    .btn-ghost { color:var(--ink); font-size:.85rem; font-weight:500; text-decoration:none; letter-spacing:.04em; display:flex; align-items:center; gap:.5rem; }
+    .btn-ghost:hover { color:var(--teal); }
+    .hero-right { display:flex; flex-direction:column; gap:2rem; padding-bottom:1rem; }
+    .hero-photo { background:var(--cream); border:1.5px solid var(--border); aspect-ratio:3/4; max-height:420px; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+    .hero-photo img { width:auto; height:100%; max-width:100%; object-fit:contain; object-position:center 20%; transition:transform .25s ease; }
+    .hero-photo-label { position:absolute; top:.8rem; left:.8rem; background:var(--yellow); padding:.3rem .7rem; font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; z-index:2; }
+    .hero-stats { display:grid; grid-template-columns:1fr 1fr 1fr; border:1.5px solid var(--border); }
+    .h-stat { padding:1rem 1.2rem; border-right:1.5px solid var(--border); }
+    .h-stat:last-child { border-right:none; }
+    .h-stat-num { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; line-height:1; color:var(--ink); }
+    .h-stat-label { font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-top:.3rem; }
+
+    .marquee-strip { background:var(--ink); padding:.7rem 0; overflow:hidden; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
+    .marquee-track { display:flex; gap:3rem; animation:marquee 30s linear infinite; white-space:nowrap; }
+    .marquee-item { font-family:'Syne',sans-serif; font-size:.8rem; font-weight:700; color:var(--paper); letter-spacing:.15em; text-transform:uppercase; display:flex; align-items:center; gap:1.5rem; flex-shrink:0; }
+    .marquee-dot { color:var(--yellow); font-size:1.2rem; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ── SKILLS — grille de logos ── */
+    #skills { padding:6rem 4rem; background:var(--paper); }
+    .skills-layout { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:280px 1fr; gap:5rem; align-items:start; }
+    .section-eyebrow { font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:.8rem; }
+    .section-title { font-family:'Instrument Serif',serif; font-size:clamp(2.2rem,4vw,3.2rem); line-height:1.1; color:var(--ink); margin-bottom:1.5rem; }
+    .section-title em { font-style:italic; color:var(--teal); }
+    .section-desc { font-size:.9rem; line-height:1.75; color:var(--muted); font-weight:300; }
+    .tech-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    .tech-card { border:1.5px solid var(--border); padding:1.4rem 1rem; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.7rem; text-align:center; transition:all .2s; cursor:default; background:var(--paper); }
+    .tech-card:hover { border-color:var(--teal); background:var(--cream); transform:translateY(-2px); }
+    .tech-logo { width:40px; height:40px; object-fit:contain; }
+    .tech-name { font-family:'Syne',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:.05em; color:var(--ink); }
+
+    /* ── PROJECTS ── */
+    #projects { padding:6rem 4rem; background:var(--cream); border-top:1.5px solid var(--border); }
+    .projects-top { max-width:1200px; margin:0 auto 3rem; display:flex; justify-content:space-between; align-items:flex-end; }
+    .projects-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .proj-card { position:relative; overflow:hidden; cursor:pointer; border:1.5px solid var(--border); border-radius:4px; background:var(--ink); transition:transform .3s ease, box-shadow .3s ease; }
+    .proj-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.15); }
+    .proj-card:first-child { grid-column:span 2; }
+    .proj-screenshot { width:100%; display:block; aspect-ratio:16/9; object-fit:cover; object-position:top left; filter:brightness(.92); transition:filter .3s, transform .4s; }
+    .proj-card:hover .proj-screenshot { filter:brightness(.6); transform:scale(1.03); }
+    .proj-bottom { position:absolute; bottom:0; left:0; right:0; padding:1.2rem 1.5rem; background:linear-gradient(transparent,rgba(0,0,0,.88)); display:flex; justify-content:space-between; align-items:flex-end; z-index:2; }
+    .proj-type { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:.3rem; }
+    .proj-title { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:white; margin-bottom:.5rem; line-height:1.2; }
+    .proj-tags { display:flex; flex-wrap:wrap; gap:.3rem; }
+    .ptag { font-size:.58rem; font-weight:700; padding:.15rem .45rem; border:1px solid rgba(255,255,255,.3); color:rgba(255,255,255,.75); letter-spacing:.06em; text-transform:uppercase; }
+    .proj-actions { display:flex; flex-direction:column; gap:.5rem; align-items:flex-end; flex-shrink:0; }
+    .proj-btn { display:flex; align-items:center; gap:.4rem; padding:.45rem .9rem; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-decoration:none; cursor:pointer; border:none; font-family:'DM Sans',sans-serif; transition:all .2s; white-space:nowrap; }
+    .proj-btn-results { background:var(--yellow); color:var(--ink); }
+    .proj-btn-results:hover { background:#f0dc55; }
+    .proj-btn-github { background:rgba(255,255,255,.12); color:white; border:1px solid rgba(255,255,255,.3); }
+    .proj-btn-github:hover { background:white; color:var(--ink); }
+
+    /* ── POPUP ── */
+    .popup-overlay { position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s; backdrop-filter:blur(4px); }
+    .popup-overlay.open { opacity:1; pointer-events:all; }
+    .popup-box { background:var(--paper); max-width:680px; width:90%; border:1.5px solid var(--ink); transform:translateY(20px); transition:transform .25s; max-height:90vh; overflow-y:auto; }
+    .popup-overlay.open .popup-box { transform:translateY(0); }
+    .popup-header { padding:1.5rem 2rem 1rem; border-bottom:1.5px solid var(--border); display:flex; justify-content:space-between; align-items:flex-start; }
+    .popup-tag { font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:.3rem; }
+    .popup-title { font-family:'Instrument Serif',serif; font-size:1.6rem; line-height:1.1; }
+    .popup-close { background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--muted); padding:.2rem .5rem; transition:color .2s; flex-shrink:0; margin-left:1rem; }
+    .popup-close:hover { color:var(--ink); }
+    .popup-body { padding:1.5rem 2rem 2rem; }
+    .popup-screenshot { width:100%; border:1.5px solid var(--border); margin-bottom:1.5rem; display:block; }
+    .popup-desc { font-size:.9rem; line-height:1.75; color:var(--muted); font-weight:300; margin-bottom:1.5rem; }
+    .popup-kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:1.5rem; }
+    .kpi-card { background:var(--cream); border:1.5px solid var(--border); padding:1rem; text-align:center; }
+    .kpi-num { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--teal); line-height:1; }
+    .kpi-label { font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-top:.3rem; }
+    .popup-findings-title { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); margin-bottom:.8rem; }
+    .finding-item { display:flex; gap:.8rem; align-items:flex-start; margin-bottom:.7rem; }
+    .finding-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); flex-shrink:0; margin-top:.4rem; }
+    .finding-text { font-size:.85rem; line-height:1.6; color:var(--muted); font-weight:300; }
+    .finding-text strong { color:var(--ink); font-weight:600; }
+    .popup-footer { padding:1rem 2rem 1.5rem; border-top:1.5px solid var(--border); display:flex; gap:1rem; }
+
+    /* ── DEMOS ── */
+    #demos { padding:6rem 4rem; background:var(--ink); border-top:1.5px solid var(--ink); }
+    .demos-top { max-width:1200px; margin:0 auto 3rem; }
+    .section-title-inv { font-family:'Instrument Serif',serif; font-size:clamp(2.2rem,4vw,3.2rem); line-height:1.1; color:var(--paper); margin-bottom:.5rem; }
+    .section-title-inv em { font-style:italic; color:var(--yellow); }
+    .section-desc-inv { font-size:.9rem; line-height:1.75; color:rgba(255,255,255,.45); font-weight:300; margin-top:.5rem; }
+    .demos-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .demo-card { border:1.5px solid rgba(255,255,255,.1); overflow:hidden; transition:border-color .25s; }
+    .demo-card:hover { border-color:rgba(255,255,255,.3); }
+    .demo-video-wrap { position:relative; aspect-ratio:16/9; background:rgba(255,255,255,.04); overflow:hidden; }
+    .demo-video-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+    .demo-video-wrap video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .demo-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(26,107,90,.3),rgba(20,18,16,.8)); cursor:pointer; gap:1rem; }
+    .demo-play-btn { width:64px; height:64px; border-radius:50%; border:2px solid rgba(255,255,255,.6); display:flex; align-items:center; justify-content:center; font-size:1.5rem; transition:all .2s; background:rgba(255,255,255,.08); }
+    .demo-card:hover .demo-play-btn { background:var(--teal); border-color:var(--teal); transform:scale(1.08); }
+    .demo-placeholder-label { font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); }
+    .demo-info { padding:1.2rem 1.5rem; }
+    .demo-tag { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:.4rem; }
+    .demo-title { font-family:'Syne',sans-serif; font-weight:700; font-size:.95rem; color:white; margin-bottom:.4rem; }
+    .demo-desc { font-size:.8rem; color:rgba(255,255,255,.45); font-weight:300; line-height:1.6; }
+
+    /* ── EXPERIENCE ── */
+    #experience { padding:6rem 4rem; background:var(--paper); border-top:1.5px solid var(--border); }
+    .exp-layout { max-width:1200px; margin:4rem auto 0; display:grid; grid-template-columns:1fr 1px 1fr; gap:0 4rem; }
+    .exp-divider { background:var(--border); }
+    .exp-col-title { font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:2rem; padding-bottom:1rem; border-bottom:1.5px solid var(--ink); }
+    .exp-list { display:flex; flex-direction:column; }
+    .exp-item { display:grid; grid-template-columns:85px 1fr; gap:1.5rem; padding:1.5rem 0; border-bottom:1px solid var(--border); }
+    .exp-item:last-child { border-bottom:none; }
+    .exp-date { font-family:'Syne',sans-serif; font-size:.72rem; font-weight:700; color:var(--teal); padding-top:.15rem; line-height:1.3; }
+    .exp-role { font-weight:700; font-size:.92rem; text-transform:uppercase; letter-spacing:.03em; margin-bottom:.2rem; }
+    .exp-company { font-size:.8rem; color:var(--teal); font-weight:500; margin-bottom:.5rem; }
+    .exp-desc { font-size:.82rem; line-height:1.7; color:var(--muted); font-weight:300; }
+
+    /* ── SERVICES ── */
+    #services { background:var(--ink); padding:6rem 4rem; }
+    .services-top { max-width:1200px; margin:0 auto 4rem; display:flex; justify-content:space-between; align-items:flex-end; }
+    .services-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; border:1.5px solid rgba(255,255,255,.1); }
+    .svc-card { padding:2.5rem 2rem; border-right:1.5px solid rgba(255,255,255,.08); border-bottom:1.5px solid rgba(255,255,255,.08); transition:background .25s; position:relative; }
+    .svc-card:hover { background:rgba(255,255,255,.04); }
+    .svc-card:nth-child(3n) { border-right:none; }
+    .svc-num { font-family:'Syne',sans-serif; font-size:.65rem; font-weight:800; letter-spacing:.2em; color:rgba(255,255,255,.2); margin-bottom:1.5rem; }
+    .svc-icon { font-size:1.8rem; margin-bottom:1rem; }
+    .svc-title { font-family:'Syne',sans-serif; font-weight:700; font-size:.9rem; text-transform:uppercase; letter-spacing:.05em; color:var(--paper); margin-bottom:.7rem; }
+    .svc-desc { font-size:.82rem; line-height:1.7; color:rgba(255,255,255,.45); font-weight:300; }
+    .svc-arrow { position:absolute; bottom:1.5rem; right:1.5rem; font-size:1rem; color:rgba(255,255,255,.2); transition:all .2s; }
+    .svc-card:hover .svc-arrow { color:var(--yellow); transform:translate(2px,-2px); }
+
+    .cta-band { background:var(--yellow); padding:3rem 4rem; display:flex; align-items:center; justify-content:space-between; }
+    .cta-band-text { font-family:'Instrument Serif',serif; font-size:clamp(1.8rem,3.5vw,2.8rem); line-height:1.1; color:var(--ink); }
+    .cta-band-text em { font-style:italic; }
+    .btn-dark { background:var(--ink); color:white; padding:.9rem 2.5rem; font-family:'DM Sans',sans-serif; font-size:.85rem; font-weight:700; text-decoration:none; letter-spacing:.05em; border:1.5px solid var(--ink); flex-shrink:0; transition:all .2s; }
+    .btn-dark:hover { background:transparent; color:var(--ink); }
+
+    /* ── CONTACT ── */
+    #contact { padding:6rem 4rem; background:var(--paper); border-top:1.5px solid var(--border); }
+    .contact-layout { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start; }
+    .contact-info { display:flex; flex-direction:column; gap:1.2rem; margin-top:2.5rem; }
+    .ci-item { display:flex; align-items:center; gap:1rem; padding:1rem 1.2rem; border:1.5px solid var(--border); transition:border-color .2s; }
+    .ci-item:hover { border-color:var(--teal); }
+    .ci-icon { width:36px; height:36px; background:var(--teal-pale); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+    .ci-text { font-size:.88rem; color:var(--muted); }
+    .form-title { font-family:'Instrument Serif',serif; font-size:2rem; margin-bottom:.4rem; }
+    .form-sub { font-size:.85rem; color:var(--muted); font-weight:300; margin-bottom:2.5rem; }
+    .form-field { margin-bottom:1.8rem; }
+    .form-field label { display:block; font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:.6rem; color:var(--ink); }
+    .form-field input, .form-field textarea { width:100%; border:none; border-bottom:1.5px solid var(--border); padding:.6rem 0; font-family:'DM Sans',sans-serif; font-size:.9rem; color:var(--ink); background:transparent; outline:none; transition:border-color .2s; resize:vertical; }
+    .form-field input:focus, .form-field textarea:focus { border-color:var(--teal); }
+    .form-field input::placeholder, .form-field textarea::placeholder { color:var(--border); }
+    .mission-options { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:2rem; }
+    .mission-btn { border:1.5px solid var(--border); background:transparent; padding:.4rem 1.1rem; font-size:.78rem; font-weight:600; cursor:pointer; letter-spacing:.04em; transition:all .2s; font-family:'DM Sans',sans-serif; }
+    .mission-btn:hover, .mission-btn.active { background:var(--teal); border-color:var(--teal); color:white; }
+
+    footer { background:var(--ink); padding:1.5rem 4rem; display:flex; justify-content:space-between; align-items:center; border-top:1.5px solid rgba(255,255,255,.1); }
+    .footer-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:.9rem; color:var(--paper); text-decoration:none; letter-spacing:.04em; }
+    footer p { color:rgba(255,255,255,.35); font-size:.75rem; }
+    .footer-dot { color:var(--yellow); }
+
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-20px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+
+    @media(max-width:1000px) {
+      nav { padding:.9rem 1.5rem; }
+      nav ul { display:none; }
+      #hero,#skills,#projects,#demos,#experience,#services,#contact { padding-left:1.5rem; padding-right:1.5rem; }
+      .hero-content { grid-template-columns:1fr; }
+      .hero-right { display:none; }
+      .skills-layout { grid-template-columns:1fr; gap:2.5rem; }
+      .tech-grid { grid-template-columns:repeat(3,1fr); }
+      .exp-layout { grid-template-columns:1fr; }
+      .exp-divider { display:none; }
+      .services-grid { grid-template-columns:1fr 1fr; }
+      .projects-grid { grid-template-columns:1fr; }
+      .proj-card:first-child { grid-column:auto; }
+      .demos-grid { grid-template-columns:1fr; }
+      .contact-layout { grid-template-columns:1fr; gap:3rem; }
+      .cta-band { flex-direction:column; gap:1.5rem; text-align:center; }
+      .projects-top, .services-top { flex-direction:column; gap:1rem; align-items:flex-start; }
+      .popup-kpis { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo"><span class="nav-logo-dot"></span>F<span style="color:var(--teal)">K.</span></a>
+  <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#demos">Démos</a></li>
+    <li><a href="#experience">Parcours</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Me contacter</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-tag">Disponible — Paris · Remote</span>
+      <h1 class="hero-name"><br/>Farel <em>Kombi</em></h1>
+      <p class="hero-desc">Data Analyst passionné par la transformation de données complexes en décisions claires. 3 ans d'expérience en BI, machine learning et storytelling data.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn-ghost">Me contacter <span>→</span></a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <span class="hero-photo-label">Data Analyst · BI Expert</span>
+        <img src="farel.jpeg" alt="Farel Crede"/>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-num">3+</div><div class="h-stat-label">Années</div></div>
+        <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-label">Projets</div></div>
+        <div class="h-stat"><div class="h-stat-num">50+</div><div class="h-stat-label">Datasets</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item">Python <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">SQL <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Power BI <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">BigQuery <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Snowflake <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">PostgreSQL <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Tableau <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Python <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">SQL <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Power BI <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">BigQuery <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Snowflake <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">PostgreSQL <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Machine Learning <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Tableau <span class="marquee-dot">✦</span></span>
+
+  </div>
+</div>
+
+<!-- SKILLS — grille de logos uniquement -->
+<section id="skills">
+  <div class="skills-layout">
+    <div class="reveal-left">
+      <p class="section-eyebrow">Mes compétences</p>
+      <h2 class="section-title">Ce que<br/>je <em>maîtrise</em></h2>
+      <p class="section-desc">De la collecte brute à la visualisation finale, j'interviens sur toute la chaîne de valeur data.</p>
+    </div>
+    <div class="reveal" id="skillsReveal">
+      <div class="tech-grid">
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
+          <span class="tech-name">Python</span>
+        </div>
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/>
+          <span class="tech-name">PostgreSQL</span>
+        </div>
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"/>
+          <span class="tech-name">Pandas</span>
+        </div>
+        <div class="tech-card">
+          <!-- Power BI -->
+          <svg class="tech-logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="3" fill="#F2C811"/>
+            <rect x="5" y="14" width="5" height="13" rx="1" fill="#1a1a1a"/>
+            <rect x="13" y="10" width="5" height="17" rx="1" fill="#1a1a1a"/>
+            <rect x="21" y="6"  width="5" height="21" rx="1" fill="#1a1a1a"/>
+          </svg>
+          <span class="tech-name">Power BI</span>
+        </div>
+        <div class="tech-card">
+          <!-- Snowflake -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#29B5E8"/>
+            <g stroke="white" stroke-width="3.5" stroke-linecap="round">
+              <line x1="32" y1="10" x2="32" y2="54"/>
+              <line x1="12" y1="21" x2="52" y2="43"/>
+              <line x1="52" y1="21" x2="12" y2="43"/>
+            </g>
+            <g fill="white">
+              <circle cx="32" cy="10" r="3.5"/><circle cx="32" cy="54" r="3.5"/>
+              <circle cx="12" cy="21" r="3.5"/><circle cx="52" cy="43" r="3.5"/>
+              <circle cx="52" cy="21" r="3.5"/><circle cx="12" cy="43" r="3.5"/>
+            </g>
+          </svg>
+          <span class="tech-name">Snowflake</span>
+        </div>
+        <div class="tech-card">
+          <!-- BigQuery -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#4285F4"/>
+            <circle cx="30" cy="30" r="12" fill="none" stroke="white" stroke-width="5"/>
+            <line x1="39" y1="39" x2="51" y2="51" stroke="white" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <span class="tech-name">BigQuery</span>
+        </div>
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"/>
+          <span class="tech-name">NumPy</span>
+        </div>
+        <div class="tech-card">
+          <!-- Tableau -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="6" fill="#E97627"/>
+            <g fill="white">
+              <rect x="29" y="8"  width="6" height="14" rx="2"/>
+              <rect x="29" y="42" width="6" height="14" rx="2"/>
+              <rect x="8"  y="29" width="14" height="6" rx="2"/>
+              <rect x="42" y="29" width="14" height="6" rx="2"/>
+              <rect x="17" y="17" width="6" height="10" rx="2" transform="rotate(45 20 22)"/>
+              <rect x="41" y="37" width="6" height="10" rx="2" transform="rotate(45 44 42)"/>
+              <rect x="17" y="37" width="10" height="6" rx="2" transform="rotate(45 22 40)"/>
+              <rect x="37" y="17" width="10" height="6" rx="2" transform="rotate(45 42 20)"/>
+            </g>
+          </svg>
+          <span class="tech-name">Tableau</span>
+        </div>
+        <div class="tech-card">
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#217346"/>
+            <g fill="#ffffff">
+              <rect x="26" y="16" width="12" height="32" transform="rotate(45 32 32)"/>
+              <rect x="26" y="16" width="12" height="32" transform="rotate(-45 32 32)"/>
+            </g>
+          </svg>
+          <span class="tech-name">Excel</span>
+        </div>
+        <div class="tech-card">
+          <!-- Scikit-learn -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#F7931E"/>
+            <path fill="white" d="M16 44 Q32 12 48 44 Q32 30 16 44z"/>
+            <circle cx="32" cy="38" r="7" fill="white"/>
+          </svg>
+          <span class="tech-name">Scikit-learn</span>
+        </div>
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
+          <span class="tech-name">Git</span>
+        </div>
+        <div class="tech-card">
+          <!-- Streamlit -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#FF4B4B"/>
+            <polygon points="32,10 54,46 10,46" fill="white"/>
+            <polygon points="22,34 42,34 32,52" fill="rgba(255,255,255,0.55)"/>
+          </svg>
+          <span class="tech-name">Streamlit</span>
+        </div>
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"/>
+          <span class="tech-name">R</span>
+        </div>
+        <div class="tech-card">
+          <!-- Plotly -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#3F4F75"/>
+            <rect x="8"  y="38" width="12" height="18" rx="2" fill="#00B8D4"/>
+            <rect x="25" y="26" width="12" height="30" rx="2" fill="#00B8D4"/>
+            <rect x="42" y="12" width="12" height="44" rx="2" fill="#00B8D4"/>
+          </svg>
+          <span class="tech-name">Plotly</span>
+        </div>
+        <div class="tech-card">
+          <!-- SQL -->
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#4A90E2"/>
+            <text x="8" y="40" font-family="Arial Black,sans-serif" font-weight="900" font-size="22" fill="white">SQL</text>
+          </svg>
+          <span class="tech-name">SQL</span>
+        </div>
+        <div class="tech-card">
+          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"/>
+          <span class="tech-name">Jupyter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-top reveal">
+    <div>
+      <p class="section-eyebrow">Portfolio</p>
+      <h2 class="section-title">Mes derniers<br/><em>projets</em></h2>
+    </div>
+    <a href="https://github.com/Crede241" target="_blank" class="btn-primary">Voir GitHub →</a>
+  </div>
+  <div class="projects-grid reveal">
+    <div class="proj-card" onclick="openPopup('p1')">
+      <img class="proj-screenshot" src="cycle-biomethane.png" alt="Analyse Production Biométhane"/>
+      <div class="proj-bottom">
+        <div class="proj-info">
+          <div class="proj-type">Business Intelligence · Énergie</div>
+          <h3 class="proj-title">Analyse Production Biométhane 2013–2023</h3>
+          <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">DAX</span><span class="ptag">PostgreSQL</span></div>
+        </div>
+        <div class="proj-actions" onclick="event.stopPropagation()">
+          <button class="proj-btn proj-btn-results" onclick="openPopup('p1')">📊 Résultats</button>
+          <a class="proj-btn proj-btn-github" href="https://github.com/Crede241" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-card" onclick="openPopup('p2')">
+      <img class="proj-screenshot" src="Sentiment analysis.png" alt="Analyse de Sentiments Multilingue"/>
+      <div class="proj-bottom">
+        <div class="proj-info">
+          <div class="proj-type">NLP · Analyse Textuelle</div>
+          <h3 class="proj-title">Analyse de Sentiments Multilingue avec BERT</h3>
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">BERT</span><span class="ptag">Streamlit</span></div>
+        </div>
+        <div class="proj-actions" onclick="event.stopPropagation()">
+          <button class="proj-btn proj-btn-results" onclick="openPopup('p2')">📊 Résultats</button>
+          <a class="proj-btn proj-btn-github" href="https://github.com/Crede241/Return-Coustemers-" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-card" onclick="openPopup('p3')">
+      <img class="proj-screenshot" src="risque-de-credit.png" alt="Modélisation Risque Crédit Immobilier"/>
+      <div class="proj-bottom">
+        <div class="proj-info">
+          <div class="proj-type">Machine Learning · Classification</div>
+          <h3 class="proj-title">Modélisation du Risque d'Octroi de Crédit Immobilier</h3>
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Scikit-learn</span><span class="ptag">Pandas</span></div>
+        </div>
+        <div class="proj-actions" onclick="event.stopPropagation()">
+          <button class="proj-btn proj-btn-results" onclick="openPopup('p3')">📊 Résultats</button>
+          <a class="proj-btn proj-btn-github" href="https://github.com/Crede241/credit_immobilier_API" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-card" onclick="openPopup('p4')">
+      <img class="proj-screenshot" src="retour-article-marchandise.png" alt="Rapport Ventes Régionales"/>
+      <div class="proj-bottom">
+        <div class="proj-info">
+          <div class="proj-type">Data Viz · Exploration</div>
+          <h3 class="proj-title">Rapport Ventes Régionales</h3>
+          <div class="proj-tags"><span class="ptag">Tableau Software</span><span class="ptag">Python</span><span class="ptag">PostgreSQL</span></div>
+        </div>
+        <div class="proj-actions" onclick="event.stopPropagation()">
+          <button class="proj-btn proj-btn-results" onclick="openPopup('p4')">📊 Résultats</button>
+          <a class="proj-btn proj-btn-github" href="https://github.com/Crede241/Global-superstore-return" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPUPS -->
+<div class="popup-overlay" id="popup-p1">
+  <div class="popup-box">
+    <div class="popup-header">
+      <div><div class="popup-tag">Business Intelligence · Énergie</div><div class="popup-title">Analyse Production Biométhane 2013–2023</div></div>
+      <button class="popup-close" onclick="closePopup('p1')">✕</button>
+    </div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="Biomethan.png" alt="Dashboard Biométhane"/>
+      <p class="popup-desc">Analyse complète de la production biométhane en France sur 10 ans. Dashboard Power BI interactif avec filtres par région, type de site et période. Identification des tendances, pics de production et disparités régionales.</p>
+      <div class="popup-kpis">
+        <div class="kpi-card"><div class="kpi-num">25,24K</div><div class="kpi-label">GWh produits</div></div>
+        <div class="kpi-card"><div class="kpi-num">39,7%</div><div class="kpi-label">Part Hauts-de-France</div></div>
+        <div class="kpi-card"><div class="kpi-num">21,39</div><div class="kpi-label">GWh/an (ind. territ.)</div></div>
+      </div>
+      <div class="popup-findings-title">Insights clés</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Hauts-de-France</strong> concentre à elle seule 39,7% de la production nationale, très loin devant Grand Est (25%) et Pays de la Loire (10,7%).</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Le secteur <strong>Industriel territorial</strong> affiche la meilleure moyenne avec 21,39 GWh/an par site, soit 72% de plus que les stations d'épuration.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Croissance continue jusqu'en <strong>2020</strong>, suivie d'une correction visible — corrélée aux politiques énergétiques post-COVID.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Dashboard 100% dynamique : les filtres région × type de site permettent une analyse granulaire en temps réel.</div></div>
+    </div>
+    <div class="popup-footer">
+      <a href="https://github.com/Crede241" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
+      <button onclick="closePopup('p1')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup-p2">
+  <div class="popup-box">
+    <div class="popup-header">
+      <div><div class="popup-tag">NLP · Analyse Textuelle</div><div class="popup-title">Analyse de Sentiments Multilingue avec BERT</div></div>
+      <button class="popup-close" onclick="closePopup('p2')">✕</button>
+    </div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="Sentiment analysis.png" alt="Analyse Sentiments"/>
+      <p class="popup-desc">Développement d'une application web permettant d'analyser automatiquement des retours clients multilingues (FR/EN) afin de transformer des commentaires bruts en indicateurs décisionnels. Intégration d'un modèle BERT multilingue (HuggingFace) pour classifier les avis (1–5 ⭐) et les convertir en catégories métier (Positif / Neutre / Négatif).</p>
+      <div class="popup-kpis">
+        <div class="kpi-card"><div class="kpi-num">125K</div><div class="kpi-label">Avis analysés</div></div>
+        <div class="kpi-card"><div class="kpi-num">94%</div><div class="kpi-label">Exactitude</div></div>
+        <div class="kpi-card"><div class="kpi-num">+34%</div><div class="kpi-label">Réactivité client</div></div>
+      </div>
+      <div class="popup-findings-title">Insights clés</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Pipeline complet</strong> : ingestion → nettoyage → prédiction BERT → visualisation, couvrant les flux de données brutes au reporting métier.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>KPI de satisfaction</strong> et répartition détaillée des sentiments (Positif/Neutre/Négatif) avec analyse temporelle pour identifier les tendances.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Extraction des mots-clés récurrents</strong> automatisée pour détecter rapidement les points d'amélioration et d'excellence dans l'expérience client.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python, Streamlit, Transformers (BERT), Pandas, Plotly — déploiement rapide avec export des résultats pour exploitation métier.</div></div>
+    </div>
+    <div class="popup-footer">
+      <a href="https://github.com/Crede241/Return-Coustemers-" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
+      <button onclick="closePopup('p2')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup-p3">
+  <div class="popup-box">
+    <div class="popup-header">
+      <div><div class="popup-tag">Machine Learning · Classification</div><div class="popup-title">Modélisation du Risque d'Octroi de Crédit Immobilier</div></div>
+      <button class="popup-close" onclick="closePopup('p3')">✕</button>
+    </div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="risque-de-credit.png" alt="Crédit Immobilier"/>
+      <p class="popup-desc">Développement d'un modèle de scoring visant à prédire l'acceptation ou le refus d'un crédit immobilier à partir de variables socio-économiques des emprunteurs. Reproduction d'un mécanisme simplifié d'aide à la décision bancaire pour identifier les facteurs de risque influençant l'octroi d'un crédit.</p>
+      <div class="popup-kpis">
+        <div class="kpi-card"><div class="kpi-num">85%</div><div class="kpi-label">Accuracy (Logistique)</div></div>
+        <div class="kpi-card"><div class="kpi-num">3</div><div class="kpi-label">Modèles comparés</div></div>
+        <div class="kpi-card"><div class="kpi-num">100%</div><div class="kpi-label">Interprétabilité</div></div>
+      </div>
+      <div class="popup-findings-title">Insights clés</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Meilleure performance</strong> : Régression Logistique (~85% accuracy) pour sa supériorité en interprétabilité.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Variables déterminantes</strong> : Credit_History (facteur majeur), situation matrimoniale, revenus du co-emprunteur.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Simplification du modèle</strong> : sous-ensemble optimisé de variables sans perte significative de performance.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python, Pandas, Scikit-learn, Matplotlib, Seaborn — modèle exporté (pickle) pour intégration dans système de scoring.</div></div>
+    </div>
+    <div class="popup-footer">
+      <a href="https://github.com/Crede241/credit_immobilier_API" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
+      <button onclick="closePopup('p3')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup-p4">
+  <div class="popup-box">
+    <div class="popup-header">
+      <div><div class="popup-tag">Data Viz · Tableau Desktop</div><div class="popup-title">Dashboard Retours de Commande</div></div>
+      <button class="popup-close" onclick="closePopup('p4')">✕</button>
+    </div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="retour-article-marchandise.png" alt="Dashboard Retours de Commande"/>
+      <p class="popup-desc">Dashboard interactif d'analyse des retours clients par région, motif et canal de vente. Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop. Filtres dynamiques, titre contextuel et actions de filtre croisées entre toutes les vues.</p>
+      <div class="popup-kpis">
+        <div class="kpi-card"><div class="kpi-num">2 000</div><div class="kpi-label">Retours analysés</div></div>
+        <div class="kpi-card"><div class="kpi-num">10</div><div class="kpi-label">Régions françaises</div></div>
+        <div class="kpi-card"><div class="kpi-num">7</div><div class="kpi-label">Motifs de retour</div></div>
+      </div>
+      <div class="popup-findings-title">Insights clés</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>PACA</strong> concentre le coût le plus élevé avec 22 257 € sur le motif "Mauvaise taille / couleur" — révèle un problème de description produit sur ce marché.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Produit défectueux</strong> est le motif le plus récurrent en Auvergne-Rhône-Alpes et Pays de la Loire — potentiellement lié à un problème qualité transporteur.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">La <strong>Normandie</strong> présente un pic inhabituel sur les commandes en double (9 669 € pour seulement 16 cas) — montants unitaires élevés à investiguer.</div></div>
+    </div>
+    <div class="popup-footer">
+      <a href="https://github.com/Crede241/Global-superstore-return" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
+      <button onclick="closePopup('p4')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEMOS -->
+<section id="demos">
+  <div class="demos-top reveal">
+    <p class="section-eyebrow" style="color:rgba(255,255,255,.4)">Démos en vidéo</p>
+    <h2 class="section-title-inv">Voir les projets<br/>en <em>action</em></h2>
+    <p class="section-desc-inv">Walkthroughs des dashboards, modèles et pipelines data.</p>
+  </div>
+  <div class="demos-grid reveal">
+    <div class="demo-card">
+      <div class="demo-video-wrap">
+        <video controls><source src="Analyse sentiment.webm" type="video/webm">Votre navigateur ne supporte pas la balise vidéo.</video>
+      </div>
+      <div class="demo-info">
+        <div class="demo-tag">NLP · Streamlit · Python</div>
+        <div class="demo-title">Application Analyse de Sentiments — Walkthrough complet</div>
+        <div class="demo-desc">Navigation dans l'app Streamlit, ingestion d'avis multilingues, prédictions BERT et extraction des insights clés.</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-video-wrap">
+        <video controls><source src="Biomethan.mp4" type="video/webm">Votre navigateur ne supporte pas la balise vidéo.</video>
+      </div>
+      <div class="demo-info">
+        <div class="demo-tag">Analyse Production Biométhane 2013–2023</div>
+        <div class="demo-title">Analyse complète de la production biométhane en France sur 10 ans</div>
+        <div class="demo-desc">Navigation dans l'app Power BI, extraction des insights clés.</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-video-wrap">
+        <video controls><source src="credit ommibilier.mp4" type="video/mp4">Votre navigateur ne supporte pas la balise vidéo.</video>
+      </div>
+      <div class="demo-info">
+        <div class="demo-tag">Machine Learning · Scikit-learn · Python</div>
+        <div class="demo-title">Prédiction Prêts Immobiliers — Credit Scoring Demo</div>
+        <div class="demo-desc">Pipeline de classification, analysis des variables critiques, interprétabilité du modèle et matrices de performance.</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-video-wrap">
+        <video controls><source src="Retour de commande .mp4" type="video/mp4">Votre navigateur ne supporte pas la balise vidéo.</video>
+      </div>
+      <div class="demo-info">
+        <div class="demo-tag">Data Viz · Tableau Desktop</div>
+        <div class="demo-title">Dashboard interactif d'analyse des retours clients par région Demo</div>
+        <div class="demo-desc">Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop. Filtres dynamiques.</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal" style="max-width:1200px;margin:0 auto;">
+    <p class="section-eyebrow">Parcours</p>
+    <h2 class="section-title">Formation &amp; <em>expérience</em></h2>
+  </div>
+  <div class="exp-layout reveal">
+    <div>
+      <div class="exp-col-title">🎓 Formation</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-date">2026</div>
+          <div class="exp-body"><div class="exp-role">Certification Google Data Analytics</div><div class="exp-company">Google · Coursera</div><div class="exp-desc">SQL, Tableau, R et analyse de données appliquée.</div></div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2023<br/>2026</div>
+          <div class="exp-body"><div class="exp-role">Master Sciences &amp; Data Management</div><div class="exp-company">Aivancity Paris-Nice</div><div class="exp-desc">Spécialisation en analyse de données, machine learning et statistiques avancées.</div></div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2019<br/>2022</div>
+          <div class="exp-body"><div class="exp-role">Licence Webmaster</div><div class="exp-company">INPTIC Gabon</div><div class="exp-desc">Développement web, statistiques et algorithmique.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="exp-divider"></div>
+    <div>
+      <div class="exp-col-title">💼 Expérience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-date">Juin 2025<br/>Nov. 2025</div>
+          <div class="exp-body"><div class="exp-role">Analyst-Reporting activités immobilières</div><div class="exp-company">Crédit Agricole Immobilier — Montrouge</div><div class="exp-desc">Pilotage des KPI immobiliers et business (lots, surfaces, taux d'occupation/vacance, répartition géographique), dashboards Power BI, coordination avec les équipes Corevage.</div></div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">Juin 2024<br/>Août 2024</div>
+          <div class="exp-body"><div class="exp-role">Data Analyst</div><div class="exp-company">Alcatel Submarine Network — Suresnes</div><div class="exp-desc">Suivi des projets de pose de câbles sous-marins fibre optique. Construction data warehouse Snowflake, pipelines ETL, reportings automatisés.</div></div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2022<br/>2023</div>
+          <div class="exp-body"><div class="exp-role">BI Analyst Junior</div><div class="exp-company">Agence Mytech Gabon — Libreville</div><div class="exp-desc">Conception d'applications web de gestion de portefeuille et d'analyse budgétaire pour entreprises, accompagnement stratégie data.</div></div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">Juin 2021<br/>Nov. 2021</div>
+          <div class="exp-body"><div class="exp-role">Gestionnaire Data</div><div class="exp-company">Société de Patrimoine — Libreville</div><div class="exp-desc">Support helpdesk et assistance aux utilisateurs dans un environnement lié aux activités eau et électricité.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-top">
+    <div>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,.4)">Ce que je fais</p>
+      <h2 class="section-title-inv">Mes <em>services</em></h2>
+    </div>
+    <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;max-width:300px;text-align:right;">Des compétences techniques au service de vos décisions business</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="svc-card"><div class="svc-num">01</div><div class="svc-icon">📊</div><h3 class="svc-title">Analyse de données</h3><p class="svc-desc">Exploration, nettoyage et analyse statistique de vos datasets pour extraire des insights clés.</p><span class="svc-arrow">↗</span></div>
+    <div class="svc-card"><div class="svc-num">02</div><div class="svc-icon">📈</div><h3 class="svc-title">Data Visualisation</h3><p class="svc-desc">Dashboards interactifs avec Power BI, Tableau ou Looker Studio pour piloter votre activité.</p><span class="svc-arrow">↗</span></div>
+    <div class="svc-card"><div class="svc-num">03</div><div class="svc-icon">🔮</div><h3 class="svc-title">Machine Learning</h3><p class="svc-desc">Modèles prédictifs, segmentation client, détection d'anomalies pour anticiper et décider.</p><span class="svc-arrow">↗</span></div>
+    <div class="svc-card"><div class="svc-num">04</div><div class="svc-icon">🗄️</div><h3 class="svc-title">Data Engineering</h3><p class="svc-desc">Pipelines ETL, modélisation SQL, entrepôts Snowflake/BigQuery pour une infrastructure robuste.</p><span class="svc-arrow">↗</span></div>
+    <div class="svc-card"><div class="svc-num">05</div><div class="svc-icon">📋</div><h3 class="svc-title">Reporting &amp; KPIs</h3><p class="svc-desc">Définition des indicateurs clés, automatisation des rapports et suivi des performances.</p><span class="svc-arrow">↗</span></div>
+    <div class="svc-card"><div class="svc-num">06</div><div class="svc-icon">🎓</div><h3 class="svc-title">Data Storytelling</h3><p class="svc-desc">Présentation claire et impactante des analyses pour convaincre décideurs et parties prenantes.</p><span class="svc-arrow">↗</span></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2 class="cta-band-text">Vous avez un projet data ?<br/><em>Parlons-en.</em></h2>
+  <a href="#contact" class="btn-dark">Me contacter →</a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div class="reveal-left">
+      <p class="section-eyebrow">Contact</p>
+      <h2 class="section-title">Travaillons<br/><em>ensemble</em></h2>
+      <p class="section-desc">Disponible pour des missions freelance et des opportunités en CDI. Réponse sous 24h.</p>
+      <div class="contact-info">
+        <div class="ci-item"><div class="ci-icon">📞</div><span class="ci-text">+33 6 67 08 75 69</span></div>
+        <div class="ci-item"><div class="ci-icon">📍</div><span class="ci-text">Paris, France · Remote OK</span></div>
+        <div class="ci-item"><div class="ci-icon">✉️</div><span class="ci-text">credefarel@outlook.com</span></div>
+        <div class="ci-item"><div class="ci-icon">💼</div><span class="ci-text">linkedin.com/in/farel-kombi/</span></div>
+        <div class="ci-item"><div class="ci-icon">⌥</div><span class="ci-text">github.com/Crede241</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="form-title">Votre projet</div>
+      <p class="form-sub">Décrivez-moi votre besoin, je vous réponds rapidement.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-field"><label>Votre nom</label><input type="text" placeholder="Jean Dupont" required/></div>
+        <div class="form-field"><label>Votre email</label><input type="email" placeholder="jean@email.com" required/></div>
+        <div class="form-field"><label>Votre message</label><textarea rows="4" placeholder="J'ai besoin d'analyser mes données de ventes..."></textarea></div>
+        <div style="margin-bottom:1rem;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Type de mission</div>
+        <div class="mission-options">
+          <button type="button" class="mission-btn" onclick="toggleMission(this)">Freelance</button>
+          <button type="button" class="mission-btn active" onclick="toggleMission(this)">CDI</button>
+          <button type="button" class="mission-btn" onclick="toggleMission(this)">Conseil</button>
+        </div>
+        <button type="submit" class="btn-primary" id="submitBtn" style="border:none;cursor:pointer;width:100%;text-align:center;padding:1rem 2rem;font-size:.88rem;">Envoyer le message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#hero" class="footer-logo">Farel KOMBI</a>
+  <p>© 2025 — Data Analyst Portfolio <span class="footer-dot">✦</span></p>
+  <p>Fait avec passion &amp; des données</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal, .reveal-left');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  function openPopup(id) {
+    document.getElementById('popup-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePopup(id) {
+    document.getElementById('popup-' + id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.popup-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) { this.classList.remove('open'); document.body.style.overflow = ''; }
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.popup-overlay.open').forEach(o => {
+        o.classList.remove('open'); document.body.style.overflow = '';
+      });
+    }
+  });
+
+  function toggleMission(btn) {
+    document.querySelectorAll('.mission-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = '✓ Message envoyé !';
+    btn.style.background = '#1a6b5a';
+    setTimeout(() => { btn.textContent = 'Envoyer le message →'; btn.style.background = ''; e.target.reset(); }, 3000);
+  }
+</script>
+</body>
+</html>
