@@ -472,7 +472,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="proj-card" onclick="openPopup('p3')">
-      <img class="proj-screenshot" src="risque-de-credit.png" alt="Modélisation Risque Crédit Immobilier"/>
+      <img class="proj-screenshot" src="Assurance.png" alt="Modélisation Risque Crédit Immobilier"/>
       <div class="proj-bottom">
         <div class="proj-info">
           <div class="proj-type">ELT ASSURANCE </div>
@@ -564,18 +564,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="popup-close" onclick="closePopup('p3')">✕</button>
     </div>
     <div class="popup-body">
-      <img class="popup-screenshot" src="Assurance.png" alt="ELT Assurance"/>
+      <img class="popup-screenshot" src="Assurance.png" alt="Crédit Immobilier"/>
       <p class="popup-desc">Dans ce projet, j’ai construit un pipeline ELT permettant de transformer des données brutes d’assurance en table analytique utilisée dans un dashboard Power BI</p>
       <div class="popup-kpis">
-        <div class="kpi-card"><div class="kpi-num">85%</div><div class="kpi-label">Accuracy (Logistique)</div></div>
-        <div class="kpi-card"><div class="kpi-num">3</div><div class="kpi-label">Modèles comparés</div></div>
-        <div class="kpi-card"><div class="kpi-num">100%</div><div class="kpi-label">Interprétabilité</div></div>
+        <div class="kpi-card"><div class="kpi-num">Données sources (RAW)</div><div class="kpi-label">Les données sont stockées dans PostgreSQL dans le schema</div></div
+        <div class="kpi-card"><div class="kpi-num">Transformation des données</div><div class="kpi-label">Les transformations sont réalisées avec dbt.</div></div>
+        <div class="kpi-card"><div class="kpi-num">Viwualisation</div><div class="kpi-label">Interprétabilité avec Power BI</div></div>
       </div>
-      <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Meilleure performance</strong> : Régression Logistique (~85% accuracy) pour sa supériorité en interprétabilité.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Variables déterminantes</strong> : Credit_History (facteur majeur), situation matrimoniale, revenus du co-emprunteur.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Simplification du modèle</strong> : sous-ensemble optimisé de variables sans perte significative de performance.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python, Pandas, Scikit-learn, Matplotlib, Seaborn — modèle exporté (pickle) pour intégration dans système de scoring.</div></div>
     </div>
     <div class="popup-footer">
       <a href="https://github.com/Crede241/credit_immobilier_API" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
