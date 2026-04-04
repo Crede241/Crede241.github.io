@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8J9JP134V9');
 </script>
   <meta charset="UTF-8"/>
@@ -52,7 +51,7 @@
     .btn-ghost:hover { color:var(--teal); }
     .hero-right { display:flex; flex-direction:column; gap:2rem; padding-bottom:1rem; }
     .hero-photo { background:var(--cream); border:1.5px solid var(--border); aspect-ratio:3/4; max-height:420px; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
-    .hero-photo img { width:auto; height:100%; max-width:100%; object-fit:contain; object-position:center 20%; transition:transform .25s ease; }
+    .hero-photo img { width:auto; height:100%; max-width:100%; object-fit:contain; object-position:center 20%; }
     .hero-photo-label { position:absolute; top:.8rem; left:.8rem; background:var(--yellow); padding:.3rem .7rem; font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; z-index:2; }
     .hero-stats { display:grid; grid-template-columns:1fr 1fr 1fr; border:1.5px solid var(--border); }
     .h-stat { padding:1rem 1.2rem; border-right:1.5px solid var(--border); }
@@ -66,7 +65,6 @@
     .marquee-dot { color:var(--yellow); font-size:1.2rem; }
     @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    /* ── SKILLS — grille de logos ── */
     #skills { padding:6rem 4rem; background:var(--paper); }
     .skills-layout { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:280px 1fr; gap:5rem; align-items:start; }
     .section-eyebrow { font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:.8rem; }
@@ -79,7 +77,6 @@
     .tech-logo { width:40px; height:40px; object-fit:contain; }
     .tech-name { font-family:'Syne',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:.05em; color:var(--ink); }
 
-    /* ── PROJECTS ── */
     #projects { padding:6rem 4rem; background:var(--cream); border-top:1.5px solid var(--border); }
     .projects-top { max-width:1200px; margin:0 auto 3rem; display:flex; justify-content:space-between; align-items:flex-end; }
     .projects-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
@@ -100,7 +97,6 @@
     .proj-btn-github { background:rgba(255,255,255,.12); color:white; border:1px solid rgba(255,255,255,.3); }
     .proj-btn-github:hover { background:white; color:var(--ink); }
 
-    /* ── POPUP ── */
     .popup-overlay { position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s; backdrop-filter:blur(4px); }
     .popup-overlay.open { opacity:1; pointer-events:all; }
     .popup-box { background:var(--paper); max-width:680px; width:90%; border:1.5px solid var(--ink); transform:translateY(20px); transition:transform .25s; max-height:90vh; overflow-y:auto; }
@@ -124,7 +120,6 @@
     .finding-text strong { color:var(--ink); font-weight:600; }
     .popup-footer { padding:1rem 2rem 1.5rem; border-top:1.5px solid var(--border); display:flex; gap:1rem; }
 
-    /* ── DEMOS ── */
     #demos { padding:6rem 4rem; background:var(--ink); border-top:1.5px solid var(--ink); }
     .demos-top { max-width:1200px; margin:0 auto 3rem; }
     .section-title-inv { font-family:'Instrument Serif',serif; font-size:clamp(2.2rem,4vw,3.2rem); line-height:1.1; color:var(--paper); margin-bottom:.5rem; }
@@ -145,7 +140,6 @@
     .demo-title { font-family:'Syne',sans-serif; font-weight:700; font-size:.95rem; color:white; margin-bottom:.4rem; }
     .demo-desc { font-size:.8rem; color:rgba(255,255,255,.45); font-weight:300; line-height:1.6; }
 
-    /* ── EXPERIENCE ── */
     #experience { padding:6rem 4rem; background:var(--paper); border-top:1.5px solid var(--border); }
     .exp-layout { max-width:1200px; margin:4rem auto 0; display:grid; grid-template-columns:1fr 1px 1fr; gap:0 4rem; }
     .exp-divider { background:var(--border); }
@@ -158,7 +152,6 @@
     .exp-company { font-size:.8rem; color:var(--teal); font-weight:500; margin-bottom:.5rem; }
     .exp-desc { font-size:.82rem; line-height:1.7; color:var(--muted); font-weight:300; }
 
-    /* ── SERVICES ── */
     #services { background:var(--ink); padding:6rem 4rem; }
     .services-top { max-width:1200px; margin:0 auto 4rem; display:flex; justify-content:space-between; align-items:flex-end; }
     .services-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; border:1.5px solid rgba(255,255,255,.1); }
@@ -178,7 +171,6 @@
     .btn-dark { background:var(--ink); color:white; padding:.9rem 2.5rem; font-family:'DM Sans',sans-serif; font-size:.85rem; font-weight:700; text-decoration:none; letter-spacing:.05em; border:1.5px solid var(--ink); flex-shrink:0; transition:all .2s; }
     .btn-dark:hover { background:transparent; color:var(--ink); }
 
-    /* ── CONTACT ── */
     #contact { padding:6rem 4rem; background:var(--paper); border-top:1.5px solid var(--border); }
     .contact-layout { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start; }
     .contact-info { display:flex; flex-direction:column; gap:1.2rem; margin-top:2.5rem; }
@@ -197,6 +189,39 @@
     .mission-btn { border:1.5px solid var(--border); background:transparent; padding:.4rem 1.1rem; font-size:.78rem; font-weight:600; cursor:pointer; letter-spacing:.04em; transition:all .2s; font-family:'DM Sans',sans-serif; }
     .mission-btn:hover, .mission-btn.active { background:var(--teal); border-color:var(--teal); color:white; }
 
+    /* ── AGENDA ── */
+    #agenda { padding:6rem 4rem; background:var(--cream); border-top:1.5px solid var(--border); }
+    .agenda-layout { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:300px 1fr; gap:5rem; align-items:start; }
+    .agenda-left {}
+    .agenda-badges { display:flex; flex-direction:column; gap:.8rem; margin-top:2rem; }
+    .agenda-badge { display:flex; align-items:center; gap:.8rem; padding:.8rem 1rem; border:1.5px solid var(--border); background:var(--paper); }
+    .agenda-badge-icon { width:32px; height:32px; background:var(--teal-pale); display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
+    .agenda-badge-text { font-size:.82rem; color:var(--muted); line-height:1.4; }
+    .agenda-badge-text strong { color:var(--ink); display:block; font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.1rem; }
+    .agenda-right {}
+    .agenda-frame-wrap {
+      border:1.5px solid var(--border);
+      background:var(--paper);
+      overflow:hidden;
+      position:relative;
+    }
+    .agenda-frame-wrap iframe {
+      width:100%;
+      height:700px;
+      border:none;
+      display:block;
+    }
+    .agenda-open-btn {
+      display:inline-flex; align-items:center; gap:.6rem;
+      margin-top:1rem;
+      background:var(--ink); color:var(--paper);
+      padding:.75rem 1.6rem;
+      font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:700;
+      text-decoration:none; letter-spacing:.05em; text-transform:uppercase;
+      border:1.5px solid var(--ink); transition:all .2s;
+    }
+    .agenda-open-btn:hover { background:transparent; color:var(--ink); }
+
     footer { background:var(--ink); padding:1.5rem 4rem; display:flex; justify-content:space-between; align-items:center; border-top:1.5px solid rgba(255,255,255,.1); }
     .footer-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:.9rem; color:var(--paper); text-decoration:none; letter-spacing:.04em; }
     footer p { color:rgba(255,255,255,.35); font-size:.75rem; }
@@ -210,7 +235,7 @@
     @media(max-width:1000px) {
       nav { padding:.9rem 1.5rem; }
       nav ul { display:none; }
-      #hero,#skills,#projects,#demos,#experience,#services,#contact { padding-left:1.5rem; padding-right:1.5rem; }
+      #hero,#skills,#projects,#demos,#experience,#services,#contact,#agenda { padding-left:1.5rem; padding-right:1.5rem; }
       .hero-content { grid-template-columns:1fr; }
       .hero-right { display:none; }
       .skills-layout { grid-template-columns:1fr; gap:2.5rem; }
@@ -222,6 +247,8 @@
       .proj-card:first-child { grid-column:auto; }
       .demos-grid { grid-template-columns:1fr; }
       .contact-layout { grid-template-columns:1fr; gap:3rem; }
+      .agenda-layout { grid-template-columns:1fr; gap:2.5rem; }
+      .agenda-frame-wrap iframe { height:500px; }
       .cta-band { flex-direction:column; gap:1.5rem; text-align:center; }
       .projects-top, .services-top { flex-direction:column; gap:1rem; align-items:flex-start; }
       .popup-kpis { grid-template-columns:1fr 1fr; }
@@ -229,10 +256,8 @@
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ9K8PN7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ9K8PN7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <nav>
   <a href="#hero" class="nav-logo"><span class="nav-logo-dot"></span>F<span style="color:var(--teal)">K.</span></a>
   <ul>
@@ -240,12 +265,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#projects">Projets</a></li>
     <li><a href="#demos">Démos</a></li>
     <li><a href="#experience">Parcours</a></li>
+    <li><a href="#agenda">Agenda</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Me contacter</a>
+  <a href="#agenda" class="nav-cta">Prendre RDV</a>
 </nav>
 
 <section id="hero">
+  <div class="hero-bg-text" aria-hidden="true">DATA</div>
   <div class="hero-content">
     <div class="hero-left">
       <span class="hero-tag">Disponible — Paris · Remote</span>
@@ -253,13 +280,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="hero-desc">Data Analyst passionné par la transformation de données complexes en décisions claires. 3 ans d'expérience en BI, machine learning et storytelling data.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Voir mes projets</a>
-        <a href="#contact" class="btn-ghost">Me contacter <span>→</span></a>
+        <a href="#agenda" class="btn-ghost">Prendre RDV <span>→</span></a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-photo">
         <span class="hero-photo-label">Data Analyst · BI Expert</span>
-        <img src="farel.jpeg" alt="Farel Crede"/>
+        <img src="farel.jpeg" alt="Farel Kombi"/>
       </div>
       <div class="hero-stats">
         <div class="h-stat"><div class="h-stat-num">3+</div><div class="h-stat-label">Années</div></div>
@@ -287,11 +314,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="marquee-item">PostgreSQL <span class="marquee-dot">✦</span></span>
     <span class="marquee-item">Machine Learning <span class="marquee-dot">✦</span></span>
     <span class="marquee-item">Tableau <span class="marquee-dot">✦</span></span>
-
   </div>
 </div>
 
-<!-- SKILLS — grille de logos uniquement -->
 <section id="skills">
   <div class="skills-layout">
     <div class="reveal-left">
@@ -301,139 +326,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="reveal" id="skillsReveal">
       <div class="tech-grid">
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/><span class="tech-name">Python</span></div>
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/><span class="tech-name">PostgreSQL</span></div>
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"/><span class="tech-name">Pandas</span></div>
         <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
-          <span class="tech-name">Python</span>
-        </div>
-        <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/>
-          <span class="tech-name">PostgreSQL</span>
-        </div>
-        <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"/>
-          <span class="tech-name">Pandas</span>
-        </div>
-        <div class="tech-card">
-          <!-- Power BI -->
-          <svg class="tech-logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" rx="3" fill="#F2C811"/>
-            <rect x="5" y="14" width="5" height="13" rx="1" fill="#1a1a1a"/>
-            <rect x="13" y="10" width="5" height="17" rx="1" fill="#1a1a1a"/>
-            <rect x="21" y="6"  width="5" height="21" rx="1" fill="#1a1a1a"/>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="3" fill="#F2C811"/><rect x="5" y="14" width="5" height="13" rx="1" fill="#1a1a1a"/><rect x="13" y="10" width="5" height="17" rx="1" fill="#1a1a1a"/><rect x="21" y="6" width="5" height="21" rx="1" fill="#1a1a1a"/></svg>
           <span class="tech-name">Power BI</span>
         </div>
         <div class="tech-card">
-          <!-- Snowflake -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" fill="#29B5E8"/>
-            <g stroke="white" stroke-width="3.5" stroke-linecap="round">
-              <line x1="32" y1="10" x2="32" y2="54"/>
-              <line x1="12" y1="21" x2="52" y2="43"/>
-              <line x1="52" y1="21" x2="12" y2="43"/>
-            </g>
-            <g fill="white">
-              <circle cx="32" cy="10" r="3.5"/><circle cx="32" cy="54" r="3.5"/>
-              <circle cx="12" cy="21" r="3.5"/><circle cx="52" cy="43" r="3.5"/>
-              <circle cx="52" cy="21" r="3.5"/><circle cx="12" cy="43" r="3.5"/>
-            </g>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#29B5E8"/><g stroke="white" stroke-width="3.5" stroke-linecap="round"><line x1="32" y1="10" x2="32" y2="54"/><line x1="12" y1="21" x2="52" y2="43"/><line x1="52" y1="21" x2="12" y2="43"/></g><g fill="white"><circle cx="32" cy="10" r="3.5"/><circle cx="32" cy="54" r="3.5"/><circle cx="12" cy="21" r="3.5"/><circle cx="52" cy="43" r="3.5"/><circle cx="52" cy="21" r="3.5"/><circle cx="12" cy="43" r="3.5"/></g></svg>
           <span class="tech-name">Snowflake</span>
         </div>
         <div class="tech-card">
-          <!-- BigQuery -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" fill="#4285F4"/>
-            <circle cx="30" cy="30" r="12" fill="none" stroke="white" stroke-width="5"/>
-            <line x1="39" y1="39" x2="51" y2="51" stroke="white" stroke-width="5" stroke-linecap="round"/>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#4285F4"/><circle cx="30" cy="30" r="12" fill="none" stroke="white" stroke-width="5"/><line x1="39" y1="39" x2="51" y2="51" stroke="white" stroke-width="5" stroke-linecap="round"/></svg>
           <span class="tech-name">BigQuery</span>
         </div>
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"/><span class="tech-name">NumPy</span></div>
         <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"/>
-          <span class="tech-name">NumPy</span>
-        </div>
-        <div class="tech-card">
-          <!-- Tableau -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="6" fill="#E97627"/>
-            <g fill="white">
-              <rect x="29" y="8"  width="6" height="14" rx="2"/>
-              <rect x="29" y="42" width="6" height="14" rx="2"/>
-              <rect x="8"  y="29" width="14" height="6" rx="2"/>
-              <rect x="42" y="29" width="14" height="6" rx="2"/>
-              <rect x="17" y="17" width="6" height="10" rx="2" transform="rotate(45 20 22)"/>
-              <rect x="41" y="37" width="6" height="10" rx="2" transform="rotate(45 44 42)"/>
-              <rect x="17" y="37" width="10" height="6" rx="2" transform="rotate(45 22 40)"/>
-              <rect x="37" y="17" width="10" height="6" rx="2" transform="rotate(45 42 20)"/>
-            </g>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="6" fill="#E97627"/><g fill="white"><rect x="29" y="8" width="6" height="14" rx="2"/><rect x="29" y="42" width="6" height="14" rx="2"/><rect x="8" y="29" width="14" height="6" rx="2"/><rect x="42" y="29" width="14" height="6" rx="2"/><rect x="17" y="17" width="6" height="10" rx="2" transform="rotate(45 20 22)"/><rect x="41" y="37" width="6" height="10" rx="2" transform="rotate(45 44 42)"/><rect x="17" y="37" width="10" height="6" rx="2" transform="rotate(45 22 40)"/><rect x="37" y="17" width="10" height="6" rx="2" transform="rotate(45 42 20)"/></g></svg>
           <span class="tech-name">Tableau</span>
         </div>
         <div class="tech-card">
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#217346"/>
-            <g fill="#ffffff">
-              <rect x="26" y="16" width="12" height="32" transform="rotate(45 32 32)"/>
-              <rect x="26" y="16" width="12" height="32" transform="rotate(-45 32 32)"/>
-            </g>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="8" fill="#217346"/><g fill="#ffffff"><rect x="26" y="16" width="12" height="32" transform="rotate(45 32 32)"/><rect x="26" y="16" width="12" height="32" transform="rotate(-45 32 32)"/></g></svg>
           <span class="tech-name">Excel</span>
         </div>
         <div class="tech-card">
-          <!-- Scikit-learn -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#F7931E"/>
-            <path fill="white" d="M16 44 Q32 12 48 44 Q32 30 16 44z"/>
-            <circle cx="32" cy="38" r="7" fill="white"/>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="8" fill="#F7931E"/><path fill="white" d="M16 44 Q32 12 48 44 Q32 30 16 44z"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
           <span class="tech-name">Scikit-learn</span>
         </div>
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/><span class="tech-name">Git</span></div>
         <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
-          <span class="tech-name">Git</span>
-        </div>
-        <div class="tech-card">
-          <!-- Streamlit -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#FF4B4B"/>
-            <polygon points="32,10 54,46 10,46" fill="white"/>
-            <polygon points="22,34 42,34 32,52" fill="rgba(255,255,255,0.55)"/>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="8" fill="#FF4B4B"/><polygon points="32,10 54,46 10,46" fill="white"/><polygon points="22,34 42,34 32,52" fill="rgba(255,255,255,0.55)"/></svg>
           <span class="tech-name">Streamlit</span>
         </div>
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"/><span class="tech-name">R</span></div>
         <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"/>
-          <span class="tech-name">R</span>
-        </div>
-        <div class="tech-card">
-          <!-- Plotly -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#3F4F75"/>
-            <rect x="8"  y="38" width="12" height="18" rx="2" fill="#00B8D4"/>
-            <rect x="25" y="26" width="12" height="30" rx="2" fill="#00B8D4"/>
-            <rect x="42" y="12" width="12" height="44" rx="2" fill="#00B8D4"/>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="8" fill="#3F4F75"/><rect x="8" y="38" width="12" height="18" rx="2" fill="#00B8D4"/><rect x="25" y="26" width="12" height="30" rx="2" fill="#00B8D4"/><rect x="42" y="12" width="12" height="44" rx="2" fill="#00B8D4"/></svg>
           <span class="tech-name">Plotly</span>
         </div>
         <div class="tech-card">
-          <!-- SQL -->
-          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#4A90E2"/>
-            <text x="8" y="40" font-family="Arial Black,sans-serif" font-weight="900" font-size="22" fill="white">SQL</text>
-          </svg>
+          <svg class="tech-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="8" fill="#4A90E2"/><text x="8" y="40" font-family="Arial Black,sans-serif" font-weight="900" font-size="22" fill="white">SQL</text></svg>
           <span class="tech-name">SQL</span>
         </div>
-        <div class="tech-card">
-          <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"/>
-          <span class="tech-name">Jupyter</span>
-        </div>
+        <div class="tech-card"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"/><span class="tech-name">Jupyter</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="projects-top reveal">
     <div>
@@ -475,8 +415,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="proj-screenshot" src="Insurance.png" alt="ELT Assurance"/>
       <div class="proj-bottom">
         <div class="proj-info">
-          <div class="proj-type">ELT ASSURANCE </div>
-          <h3 class="proj-title">Pipeline ELT pour l’analyse des sinistres</h3>
+          <div class="proj-type">ELT ASSURANCE</div>
+          <h3 class="proj-title">Pipeline ELT pour l'analyse des sinistres</h3>
           <div class="proj-tags"><span class="ptag">Dbt-Core</span><span class="ptag">PostgreSQL</span><span class="ptag">POWER BI</span></div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
@@ -486,11 +426,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="proj-card" onclick="openPopup('p4')">
-      <img class="proj-screenshot" src="retour-article-marchandise.png" alt="Rapport Ventes Régionales"/>
+      <img class="proj-screenshot" src="retour-article-marchandise.png" alt="Dashboard Retours de Commande"/>
       <div class="proj-bottom">
         <div class="proj-info">
           <div class="proj-type">Data Viz · Exploration</div>
-          <h3 class="proj-title">Rapport Ventes Régionales</h3>
+          <h3 class="proj-title">Dashboard Retours de Commande</h3>
           <div class="proj-tags"><span class="ptag">Tableau Software</span><span class="ptag">Python</span><span class="ptag">PostgreSQL</span></div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
@@ -505,103 +445,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- POPUPS -->
 <div class="popup-overlay" id="popup-p1">
   <div class="popup-box">
-    <div class="popup-header">
-      <div><div class="popup-tag">Business Intelligence · Énergie</div><div class="popup-title">Analyse Production Biométhane 2013–2023</div></div>
-      <button class="popup-close" onclick="closePopup('p1')">✕</button>
-    </div>
+    <div class="popup-header"><div><div class="popup-tag">Business Intelligence · Énergie</div><div class="popup-title">Analyse Production Biométhane 2013–2023</div></div><button class="popup-close" onclick="closePopup('p1')">✕</button></div>
     <div class="popup-body">
       <img class="popup-screenshot" src="cycle-biomethane.png" alt="Dashboard Biométhane"/>
-      <p class="popup-desc">Analyse complète de la production biométhane en France sur 10 ans. Dashboard Power BI interactif avec filtres par région, type de site et période. Identification des tendances, pics de production et disparités régionales.</p>
-      <div class="popup-kpis">
-        <div class="kpi-card"><div class="kpi-num">25,24K</div><div class="kpi-label">GWh produits</div></div>
-        <div class="kpi-card"><div class="kpi-num">39,7%</div><div class="kpi-label">Part Hauts-de-France</div></div>
-        <div class="kpi-card"><div class="kpi-num">21,39</div><div class="kpi-label">GWh/an (ind. territ.)</div></div>
-      </div>
+      <p class="popup-desc">Analyse complète de la production biométhane en France sur 10 ans. Dashboard Power BI interactif avec filtres par région, type de site et période.</p>
+      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">25,24K</div><div class="kpi-label">GWh produits</div></div><div class="kpi-card"><div class="kpi-num">39,7%</div><div class="kpi-label">Part Hauts-de-France</div></div><div class="kpi-card"><div class="kpi-num">21,39</div><div class="kpi-label">GWh/an (ind. territ.)</div></div></div>
       <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Hauts-de-France</strong> concentre à elle seule 39,7% de la production nationale, très loin devant Grand Est (25%) et Pays de la Loire (10,7%).</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Le secteur <strong>Industriel territorial</strong> affiche la meilleure moyenne avec 21,39 GWh/an par site, soit 72% de plus que les stations d'épuration.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Croissance continue jusqu'en <strong>2020</strong>, suivie d'une correction visible — corrélée aux politiques énergétiques post-COVID.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Dashboard 100% dynamique : les filtres région × type de site permettent une analyse granulaire en temps réel.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Hauts-de-France</strong> concentre 39,7% de la production nationale, loin devant Grand Est (25%) et Pays de la Loire (10,7%).</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Le secteur <strong>Industriel territorial</strong> affiche 21,39 GWh/an par site, soit 72% de plus que les stations d'épuration.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Croissance continue jusqu'en <strong>2020</strong>, suivie d'une correction corrélée aux politiques énergétiques post-COVID.</div></div>
     </div>
-    <div class="popup-footer">
-      <a href="https://github.com/Crede241" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
-      <button onclick="closePopup('p1')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
-    </div>
+    <div class="popup-footer"><a href="https://github.com/Crede241" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p1')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
   </div>
 </div>
 
 <div class="popup-overlay" id="popup-p2">
   <div class="popup-box">
-    <div class="popup-header">
-      <div><div class="popup-tag">NLP · Analyse Textuelle</div><div class="popup-title">Analyse de Sentiments Multilingue avec BERT</div></div>
-      <button class="popup-close" onclick="closePopup('p2')">✕</button>
-    </div>
+    <div class="popup-header"><div><div class="popup-tag">NLP · Analyse Textuelle</div><div class="popup-title">Analyse de Sentiments Multilingue avec BERT</div></div><button class="popup-close" onclick="closePopup('p2')">✕</button></div>
     <div class="popup-body">
       <img class="popup-screenshot" src="Sentiment analysis.png" alt="Analyse Sentiments"/>
-      <p class="popup-desc">Développement d'une application web permettant d'analyser automatiquement des retours clients multilingues (FR/EN) afin de transformer des commentaires bruts en indicateurs décisionnels. Intégration d'un modèle BERT multilingue (HuggingFace) pour classifier les avis (1–5 ⭐) et les convertir en catégories métier (Positif / Neutre / Négatif).</p>
-      <div class="popup-kpis">
-        <div class="kpi-card"><div class="kpi-num">125K</div><div class="kpi-label">Avis analysés</div></div>
-        <div class="kpi-card"><div class="kpi-num">94%</div><div class="kpi-label">Exactitude</div></div>
-        <div class="kpi-card"><div class="kpi-num">+34%</div><div class="kpi-label">Réactivité client</div></div>
-      </div>
+      <p class="popup-desc">Application web d'analyse automatique de retours clients multilingues (FR/EN). Modèle BERT multilingue (HuggingFace) pour classifier les avis et les convertir en catégories métier.</p>
+      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">125K</div><div class="kpi-label">Avis analysés</div></div><div class="kpi-card"><div class="kpi-num">94%</div><div class="kpi-label">Exactitude</div></div><div class="kpi-card"><div class="kpi-num">+34%</div><div class="kpi-label">Réactivité client</div></div></div>
       <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Pipeline complet</strong> : ingestion → nettoyage → prédiction BERT → visualisation, couvrant les flux de données brutes au reporting métier.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>KPI de satisfaction</strong> et répartition détaillée des sentiments (Positif/Neutre/Négatif) avec analyse temporelle pour identifier les tendances.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Extraction des mots-clés récurrents</strong> automatisée pour détecter rapidement les points d'amélioration et d'excellence dans l'expérience client.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python, Streamlit, Transformers (BERT), Pandas, Plotly — déploiement rapide avec export des résultats pour exploitation métier.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Pipeline complet</strong> : ingestion → nettoyage → prédiction BERT → visualisation.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Extraction des mots-clés récurrents</strong> automatisée pour détecter les points d'amélioration.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python, Streamlit, Transformers (BERT), Pandas, Plotly.</div></div>
     </div>
-    <div class="popup-footer">
-      <a href="https://github.com/Crede241/Return-Coustemers-" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
-      <button onclick="closePopup('p2')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
-    </div>
+    <div class="popup-footer"><a href="https://github.com/Crede241/Return-Coustemers-" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p2')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
   </div>
 </div>
 
 <div class="popup-overlay" id="popup-p3">
   <div class="popup-box">
-    <div class="popup-header">
-      <div><div class="popup-tag">ELT DBT</div><div class="popup-title">Pipeline ELT pour l’analyse des sinistres</div></div>
-      <button class="popup-close" onclick="closePopup('p3')">✕</button>
-    </div>
+    <div class="popup-header"><div><div class="popup-tag">ELT DBT</div><div class="popup-title">Pipeline ELT pour l'analyse des sinistres</div></div><button class="popup-close" onclick="closePopup('p3')">✕</button></div>
     <div class="popup-body">
       <img class="popup-screenshot" src="Insurance.png" alt="ELT Assurance"/>
-      <p class="popup-desc">Dans ce projet, j’ai construit un pipeline ELT permettant de transformer des données brutes d’assurance en table analytique utilisée dans un dashboard Power BI</p>
-      <div class="popup-kpis">
-        <div class="kpi-card"><div class="kpi-num">Données sources (RAW)</div><div class="kpi-label">Les données sont stockées dans PostgreSQL dans le schema</div></div>
-        <div class="kpi-card"><div class="kpi-num">Transformation des données</div><div class="kpi-label">Les transformations sont réalisées avec dbt.</div></div>
-        <div class="kpi-card"><div class="kpi-num">Viwualisation</div><div class="kpi-label">Interprétabilité avec Power BI</div></div>
-      </div>
+      <p class="popup-desc">Pipeline ELT transformant des données brutes d'assurance en table analytique utilisée dans un dashboard Power BI.</p>
+      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Données RAW</div><div class="kpi-label">Stockées dans PostgreSQL</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Transformations</div><div class="kpi-label">Réalisées avec dbt</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Visualisation</div><div class="kpi-label">Dashboard Power BI</div></div></div>
     </div>
-    <div class="popup-footer">
-      <a href="https://github.com/Crede241/insurance_project" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
-      <button onclick="closePopup('p3')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
-    </div>
+    <div class="popup-footer"><a href="https://github.com/Crede241/insurance_project" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p3')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
   </div>
 </div>
 
 <div class="popup-overlay" id="popup-p4">
   <div class="popup-box">
-    <div class="popup-header">
-      <div><div class="popup-tag">Data Viz · Tableau Desktop</div><div class="popup-title">Dashboard Retours de Commande</div></div>
-      <button class="popup-close" onclick="closePopup('p4')">✕</button>
-    </div>
+    <div class="popup-header"><div><div class="popup-tag">Data Viz · Tableau Desktop</div><div class="popup-title">Dashboard Retours de Commande</div></div><button class="popup-close" onclick="closePopup('p4')">✕</button></div>
     <div class="popup-body">
       <img class="popup-screenshot" src="retour-article-marchandise.png" alt="Dashboard Retours de Commande"/>
-      <p class="popup-desc">Dashboard interactif d'analyse des retours clients par région, motif et canal de vente. Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop. Filtres dynamiques, titre contextuel et actions de filtre croisées entre toutes les vues.</p>
-      <div class="popup-kpis">
-        <div class="kpi-card"><div class="kpi-num">2 000</div><div class="kpi-label">Retours analysés</div></div>
-        <div class="kpi-card"><div class="kpi-num">10</div><div class="kpi-label">Régions françaises</div></div>
-        <div class="kpi-card"><div class="kpi-num">7</div><div class="kpi-label">Motifs de retour</div></div>
-      </div>
+      <p class="popup-desc">Dashboard interactif d'analyse des retours clients par région, motif et canal de vente. Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop.</p>
+      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">2 000</div><div class="kpi-label">Retours analysés</div></div><div class="kpi-card"><div class="kpi-num">10</div><div class="kpi-label">Régions françaises</div></div><div class="kpi-card"><div class="kpi-num">7</div><div class="kpi-label">Motifs de retour</div></div></div>
       <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>PACA</strong> concentre le coût le plus élevé avec 22 257 € sur le motif "Mauvaise taille / couleur" — révèle un problème de description produit sur ce marché.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Produit défectueux</strong> est le motif le plus récurrent en Auvergne-Rhône-Alpes et Pays de la Loire — potentiellement lié à un problème qualité transporteur.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">La <strong>Normandie</strong> présente un pic inhabituel sur les commandes en double (9 669 € pour seulement 16 cas) — montants unitaires élevés à investiguer.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>PACA</strong> concentre le coût le plus élevé avec 22 257 € sur "Mauvaise taille / couleur".</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Produit défectueux</strong> est le motif le plus récurrent en Auvergne-Rhône-Alpes et Pays de la Loire.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">La <strong>Normandie</strong> présente un pic sur les commandes en double (9 669 € pour 16 cas).</div></div>
     </div>
-    <div class="popup-footer">
-      <a href="https://github.com/Crede241/Global-superstore-return" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a>
-      <button onclick="closePopup('p4')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
-    </div>
+    <div class="popup-footer"><a href="https://github.com/Crede241/Global-superstore-return" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p4')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
   </div>
 </div>
 
@@ -614,47 +512,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="demos-grid reveal">
     <div class="demo-card">
-      <div class="demo-video-wrap">
-        <iframe src="https://www.youtube.com/embed/UZv10f9FiUo" allowfullscreen></iframe>
-      </div>
-      <div class="demo-info">
-        <div class="demo-tag">NLP · Streamlit · Python</div>
-        <div class="demo-title">Application Analyse de Sentiments — Walkthrough complet</div>
-        <div class="demo-desc">Navigation dans l'app Streamlit, ingestion d'avis multilingues, prédictions BERT et extraction des insights clés.</div>
-      </div>
+      <div class="demo-video-wrap"><iframe src="https://www.youtube.com/embed/UZv10f9FiUo" allowfullscreen></iframe></div>
+      <div class="demo-info"><div class="demo-tag">NLP · Streamlit · Python</div><div class="demo-title">Application Analyse de Sentiments — Walkthrough complet</div><div class="demo-desc">Navigation dans l'app Streamlit, ingestion d'avis multilingues, prédictions BERT et extraction des insights clés.</div></div>
     </div>
     <div class="demo-card">
-      <div class="demo-video-wrap">
-        <iframe src="https://www.youtube.com/embed/DlT0p4ebm0o" allowfullscreen></iframe>
-      </div>
-      <div class="demo-info">
-        <div class="demo-tag">Analyse Production Biométhane 2013–2023</div>
-        <div class="demo-title">Analyse complète de la production biométhane en France sur 10 ans</div>
-        <div class="demo-desc">Navigation dans l'app Power BI, extraction des insights clés.</div>
-      </div>
+      <div class="demo-video-wrap"><iframe src="https://www.youtube.com/embed/DlT0p4ebm0o" allowfullscreen></iframe></div>
+      <div class="demo-info"><div class="demo-tag">Analyse Production Biométhane 2013–2023</div><div class="demo-title">Analyse complète de la production biométhane en France sur 10 ans</div><div class="demo-desc">Navigation dans l'app Power BI, extraction des insights clés.</div></div>
     </div>
-
-   <div class="demo-card">
-      <div class="demo-video-wrap">
-        <iframe src="https://www.youtube.com/embed/DB--pVPtUSY" allowfullscreen></iframe>
-      </div>
-      <div class="demo-info">
-        <div class="demo-tag">Pipeline ELT pour l’analyse des sinistres</div>
-        <div class="demo-title">construire un pipeline ELT permettant de transformer des données brutes d’assurance en table analytique utilisée dans un dashboard Power BI.</div>
-        <div class="demo-desc">Navigation dans l'app Power BI, extraction des insights clés.</div>
-      </div>
-    </div>
-   
     <div class="demo-card">
-      <div class="demo-video-wrap">
-        <iframe src="https://www.youtube.com/embed/QDHvfzoF3LQ" allowfullscreen></iframe>
-      </div>
-      <div class="demo-info">
-        <div class="demo-tag">Data Viz · Tableau Desktop</div>
-        <div class="demo-title">Dashboard interactif d'analyse des retours clients par région Demo</div>
-        <div class="demo-desc">Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop. Filtres dynamiques.</div>
-      </div>
+      <div class="demo-video-wrap"><iframe src="https://www.youtube.com/embed/DB--pVPtUSY" allowfullscreen></iframe></div>
+      <div class="demo-info"><div class="demo-tag">Pipeline ELT pour l'analyse des sinistres</div><div class="demo-title">Pipeline ELT — données brutes d'assurance vers dashboard Power BI</div><div class="demo-desc">Navigation dans l'app Power BI, extraction des insights clés.</div></div>
     </div>
+    <div class="demo-card">
+      <div class="demo-video-wrap"><iframe src="https://www.youtube.com/embed/QDHvfzoF3LQ" allowfullscreen></iframe></div>
+      <div class="demo-info"><div class="demo-tag">Data Viz · Tableau Desktop</div><div class="demo-title">Dashboard interactif d'analyse des retours clients par région</div><div class="demo-desc">Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop. Filtres dynamiques.</div></div>
     </div>
   </div>
 </section>
@@ -669,41 +540,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <div class="exp-col-title">🎓 Formation</div>
       <div class="exp-list">
-        <div class="exp-item">
-          <div class="exp-date">2026</div>
-          <div class="exp-body"><div class="exp-role">
-Google Data Analytics Professional Certificate(v.3)</div><div class="exp-company">Google · Coursera</div><div class="exp-desc">SQL, Tableau, R et analyse de données appliquée.</div></div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-date">2023<br/>2025</div>
-          <div class="exp-body"><div class="exp-role">Master Sciences &amp; Data Management</div><div class="exp-company">Aivancity Paris-Nice</div><div class="exp-desc">Spécialisation en analyse de données, machine learning et statistiques avancées.</div></div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-date">2019<br/>2022</div>
-          <div class="exp-body"><div class="exp-role">Licence Webmaster</div><div class="exp-company">INPTIC Gabon</div><div class="exp-desc">Développement web, statistiques et algorithmique.</div></div>
-        </div>
+        <div class="exp-item"><div class="exp-date">2026</div><div class="exp-body"><div class="exp-role">Google Data Analytics Professional Certificate (v.3)</div><div class="exp-company">Google · Coursera</div><div class="exp-desc">SQL, Tableau, R et analyse de données appliquée.</div></div></div>
+        <div class="exp-item"><div class="exp-date">2023<br/>2025</div><div class="exp-body"><div class="exp-role">Master Sciences &amp; Data Management</div><div class="exp-company">Aivancity Paris-Nice</div><div class="exp-desc">Spécialisation en analyse de données, machine learning et statistiques avancées.</div></div></div>
+        <div class="exp-item"><div class="exp-date">2019<br/>2022</div><div class="exp-body"><div class="exp-role">Licence Webmaster</div><div class="exp-company">INPTIC Gabon</div><div class="exp-desc">Développement web, statistiques et algorithmique.</div></div></div>
       </div>
     </div>
     <div class="exp-divider"></div>
     <div>
       <div class="exp-col-title">💼 Expérience</div>
       <div class="exp-list">
-        <div class="exp-item">
-          <div class="exp-date">Juin 2025<br/>Nov. 2025</div>
-          <div class="exp-body"><div class="exp-role">Analyst-Reporting activités immobilières</div><div class="exp-company">Crédit Agricole Immobilier — Montrouge</div><div class="exp-desc">Pilotage des KPI immobiliers et business (lots, surfaces, taux d'occupation/vacance, répartition géographique), dashboards Power BI, coordination avec les équipes Corevage.</div></div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-date">Juin 2024<br/>Août 2024</div>
-          <div class="exp-body"><div class="exp-role">Data Analyst</div><div class="exp-company">Alcatel Submarine Network — Suresnes</div><div class="exp-desc">Suivi des projets de pose de câbles sous-marins fibre optique. Construction data warehouse Snowflake, pipelines ETL, reportings automatisés.</div></div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-date">Mai 2022<br/> Août 2023</div>
-          <div class="exp-body"><div class="exp-role">BI Analyst Junior</div><div class="exp-company">Agence Mytech Gabon — Libreville</div><div class="exp-desc">Conception d'applications web de gestion de portefeuille et d'analyse budgétaire pour entreprises, accompagnement stratégie data.</div></div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-date">Mai 2021<br/> Décembre 2021</div>
-          <div class="exp-body"><div class="exp-role">Gestionnaire Data</div><div class="exp-company">Société de Patrimoine — Libreville</div><div class="exp-desc">Support helpdesk et assistance aux utilisateurs dans un environnement lié aux activités eau et électricité.</div></div>
-        </div>
+        <div class="exp-item"><div class="exp-date">Juin 2025<br/>Nov. 2025</div><div class="exp-body"><div class="exp-role">Analyst-Reporting activités immobilières</div><div class="exp-company">Crédit Agricole Immobilier — Montrouge</div><div class="exp-desc">Pilotage des KPI immobiliers et business (lots, surfaces, taux d'occupation/vacance, répartition géographique), dashboards Power BI, coordination avec les équipes Corevage.</div></div></div>
+        <div class="exp-item"><div class="exp-date">Juin 2024<br/>Août 2024</div><div class="exp-body"><div class="exp-role">Data Analyst</div><div class="exp-company">Alcatel Submarine Network — Suresnes</div><div class="exp-desc">Suivi des projets de pose de câbles sous-marins fibre optique. Construction data warehouse Snowflake, pipelines ETL, reportings automatisés.</div></div></div>
+        <div class="exp-item"><div class="exp-date">Mai 2022<br/>Août 2023</div><div class="exp-body"><div class="exp-role">BI Analyst Junior</div><div class="exp-company">Agence Mytech Gabon — Libreville</div><div class="exp-desc">Conception d'applications web de gestion de portefeuille et d'analyse budgétaire pour entreprises, accompagnement stratégie data.</div></div></div>
+        <div class="exp-item"><div class="exp-date">Mai 2021<br/>Déc. 2021</div><div class="exp-body"><div class="exp-role">Gestionnaire Data</div><div class="exp-company">Société de Patrimoine — Libreville</div><div class="exp-desc">Support helpdesk et assistance aux utilisateurs dans un environnement lié aux activités eau et électricité.</div></div></div>
       </div>
     </div>
   </div>
@@ -712,10 +561,7 @@ Google Data Analytics Professional Certificate(v.3)</div><div class="exp-company
 <!-- SERVICES -->
 <section id="services">
   <div class="services-top">
-    <div>
-      <p class="section-eyebrow" style="color:rgba(255,255,255,.4)">Ce que je fais</p>
-      <h2 class="section-title-inv">Mes <em>services</em></h2>
-    </div>
+    <div><p class="section-eyebrow" style="color:rgba(255,255,255,.4)">Ce que je fais</p><h2 class="section-title-inv">Mes <em>services</em></h2></div>
     <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;max-width:300px;text-align:right;">Des compétences techniques au service de vos décisions business</p>
   </div>
   <div class="services-grid reveal">
@@ -730,39 +576,47 @@ Google Data Analytics Professional Certificate(v.3)</div><div class="exp-company
 
 <div class="cta-band">
   <h2 class="cta-band-text">Vous avez un projet data ?<br/><em>Parlons-en.</em></h2>
-  <a href="#contact" class="btn-dark">Me contacter →</a>
+  <a href="#agenda" class="btn-dark">Prendre RDV →</a>
 </div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-layout">
+<!-- ░░░ AGENDA ░░░ -->
+<section id="agenda">
+  <div class="agenda-layout">
     <div class="reveal-left">
-      <p class="section-eyebrow">Contact</p>
-      <h2 class="section-title">Travaillons<br/><em>ensemble</em></h2>
-      <p class="section-desc">Disponible pour des missions freelance et des opportunités en CDI. Réponse sous 24h.</p>
-      <div class="contact-info">
-        <div class="ci-item"><div class="ci-icon">📞</div><span class="ci-text">+33 6 67 08 75 69</span></div>
-        <div class="ci-item"><div class="ci-icon">📍</div><span class="ci-text">Paris, France · Remote OK</span></div>
-        <div class="ci-item"><div class="ci-icon">✉️</div><span class="ci-text">credefarel@outlook.com</span></div>
-        <div class="ci-item"><div class="ci-icon">💼</div><span class="ci-text">linkedin.com/in/farel-kombi/</span></div>
-        <div class="ci-item"><div class="ci-icon">⌥</div><span class="ci-text">github.com/Crede241</span></div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="form-title">Votre projet</div>
-      <p class="form-sub">Décrivez-moi votre besoin, je vous réponds rapidement.</p>
-      <form onsubmit="handleSubmit(event)">
-        <div class="form-field"><label>Votre nom</label><input type="text" placeholder="Jean Dupont" required/></div>
-        <div class="form-field"><label>Votre email</label><input type="email" placeholder="jean@email.com" required/></div>
-        <div class="form-field"><label>Votre message</label><textarea rows="4" placeholder="J'ai besoin d'analyser mes données de ventes..."></textarea></div>
-        <div style="margin-bottom:1rem;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Type de mission</div>
-        <div class="mission-options">
-          <button type="button" class="mission-btn" onclick="toggleMission(this)">Freelance</button>
-          <button type="button" class="mission-btn active" onclick="toggleMission(this)">CDI</button>
-          <button type="button" class="mission-btn" onclick="toggleMission(this)">Conseil</button>
+      <p class="section-eyebrow">Disponibilités</p>
+      <h2 class="section-title">Réserver<br/>un <em>créneau</em></h2>
+      <p class="section-desc">Choisissez directement un créneau disponible dans mon agenda. Je confirme sous 24h.</p>
+      <div class="agenda-badges">
+        <div class="agenda-badge">
+          <div class="agenda-badge-icon">🕐</div>
+          <div class="agenda-badge-text"><strong>Durée</strong>30 min ou 1h selon le besoin</div>
         </div>
-        <button type="submit" class="btn-primary" id="submitBtn" style="border:none;cursor:pointer;width:100%;text-align:center;padding:1rem 2rem;font-size:.88rem;">Envoyer le message →</button>
-      </form>
+        <div class="agenda-badge">
+          <div class="agenda-badge-icon">📍</div>
+          <div class="agenda-badge-text"><strong>Format</strong>Visio (Google Meet / Teams) ou présentiel Paris</div>
+        </div>
+        <div class="agenda-badge">
+          <div class="agenda-badge-icon">⚡</div>
+          <div class="agenda-badge-text"><strong>Confirmation</strong>Automatique par email dès la réservation</div>
+        </div>
+        <div class="agenda-badge">
+          <div class="agenda-badge-icon">🗓️</div>
+          <div class="agenda-badge-text"><strong>Agenda</strong>Mis à jour en temps réel — sans double réservation</div>
+        </div>
+      </div>
+      <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1zcgDEjc1UWOhmijbPnTwMNCLAtYMRbrY79xe8tPID5Co-T5fjecSyWeGpda0_uQMIr9NE0J6c" target="_blank" class="agenda-open-btn" style="margin-top:2rem;">
+        🗓️ Ouvrir dans Google Agenda
+      </a>
+    </div>
+    <div class="reveal agenda-right">
+      <div class="agenda-frame-wrap">
+        <iframe
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zcgDEjc1UWOhmijbPnTwMNCLAtYMRbrY79xe8tPID5Co-T5fjecSyWeGpda0_uQMIr9NE0J6c?gv=true"
+          title="Prendre rendez-vous avec Farel Kombi"
+          frameborder="0"
+          scrolling="yes"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>
