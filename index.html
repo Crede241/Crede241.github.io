@@ -381,14 +381,20 @@
     </div>
     <a href="https://github.com/Crede241" target="_blank" class="btn-primary">Voir GitHub →</a>
   </div>
+
   <div class="projects-grid reveal">
+
     <div class="proj-card" onclick="openPopup('p1')">
       <img class="proj-screenshot" src="cycle-biomethane.png" alt="Analyse Production Biométhane"/>
       <div class="proj-bottom">
         <div class="proj-info">
           <div class="proj-type">Business Intelligence · Énergie</div>
           <h3 class="proj-title">Analyse Production Biométhane 2013–2023</h3>
-          <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">DAX</span><span class="ptag">PostgreSQL</span></div>
+          <div class="proj-tags">
+            <span class="ptag">Power BI</span>
+            <span class="ptag">DAX</span>
+            <span class="ptag">PostgreSQL</span>
+          </div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
           <button class="proj-btn proj-btn-results" onclick="openPopup('p1')">📊 Résultats</button>
@@ -396,13 +402,18 @@
         </div>
       </div>
     </div>
+
     <div class="proj-card" onclick="openPopup('p2')">
-      <img class="proj-screenshot" src="Sentiment analysis.png" alt="Analyse de Sentiments Multilingue"/>
+      <img class="proj-screenshot" src="Sentiment analysis.png" alt="Analyse de Sentiments"/>
       <div class="proj-bottom">
         <div class="proj-info">
           <div class="proj-type">NLP · Analyse Textuelle</div>
           <h3 class="proj-title">Analyse de Sentiments Multilingue avec BERT</h3>
-          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">BERT</span><span class="ptag">Streamlit</span></div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">BERT</span>
+            <span class="ptag">Streamlit</span>
+          </div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
           <button class="proj-btn proj-btn-results" onclick="openPopup('p2')">📊 Résultats</button>
@@ -410,13 +421,18 @@
         </div>
       </div>
     </div>
+
     <div class="proj-card" onclick="openPopup('p3')">
       <img class="proj-screenshot" src="Insurance.png" alt="ELT Assurance"/>
       <div class="proj-bottom">
         <div class="proj-info">
-          <div class="proj-type">ELT ASSURANCE</div>
+          <div class="proj-type">ELT Assurance</div>
           <h3 class="proj-title">Pipeline ELT pour l'analyse des sinistres</h3>
-          <div class="proj-tags"><span class="ptag">Dbt-Core</span><span class="ptag">PostgreSQL</span><span class="ptag">POWER BI</span></div>
+          <div class="proj-tags">
+            <span class="ptag">dbt-core</span>
+            <span class="ptag">PostgreSQL</span>
+            <span class="ptag">Power BI</span>
+          </div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
           <button class="proj-btn proj-btn-results" onclick="openPopup('p3')">📊 Résultats</button>
@@ -424,14 +440,18 @@
         </div>
       </div>
     </div>
-    
+
     <div class="proj-card" onclick="openPopup('p4')">
-      <img class="proj-screenshot" src="retour-article-marchandise.png" alt="Dashboard Retours de Commande"/>
+      <img class="proj-screenshot" src="retour-article-marchandise.png" alt="Dashboard Retours"/>
       <div class="proj-bottom">
         <div class="proj-info">
           <div class="proj-type">Data Viz · Exploration</div>
           <h3 class="proj-title">Dashboard Retours de Commande</h3>
-          <div class="proj-tags"><span class="ptag">Tableau Software</span><span class="ptag">Python</span><span class="ptag">PostgreSQL</span></div>
+          <div class="proj-tags">
+            <span class="ptag">Tableau</span>
+            <span class="ptag">Python</span>
+            <span class="ptag">PostgreSQL</span>
+          </div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
           <button class="proj-btn proj-btn-results" onclick="openPopup('p4')">📊 Résultats</button>
@@ -439,15 +459,19 @@
         </div>
       </div>
     </div>
-  </div>
 
-   <div class="proj-card" onclick="openPopup('p5')">
-      <img class="proj-screenshot" src="analyse-commerciale-scaled.jpeg" alt="ELT Commerce"/>
+    <!-- ✅ P5 BIEN DANS LA GRILLE -->
+    <div class="proj-card" onclick="openPopup('p5')">
+      <img class="proj-screenshot" src="analyse-commerciale-scaled.jpeg" alt="ETL Commerce"/>
       <div class="proj-bottom">
         <div class="proj-info">
-          <div class="proj-type">ETL PERFOMANCE COMMERCIALE</div>
-          <h3 class="proj-title">Pipeline ETL pour l'analyse perfomance commerciale</h3>
-          <div class="proj-tags"><span class="ptag">Snaowflake</span><span class="ptag">SQL</span><span class="ptag">POWER BI</span></div>
+          <div class="proj-type">ETL Performance commerciale</div>
+          <h3 class="proj-title">Pipeline ETL pour l'analyse performance commerciale</h3>
+          <div class="proj-tags">
+            <span class="ptag">Snowflake</span>
+            <span class="ptag">SQL</span>
+            <span class="ptag">Power BI</span>
+          </div>
         </div>
         <div class="proj-actions" onclick="event.stopPropagation()">
           <button class="proj-btn proj-btn-results" onclick="openPopup('p5')">📊 Résultats</button>
@@ -455,113 +479,9 @@
         </div>
       </div>
     </div>
+
+  </div>
 </section>
-
-<!-- POPUPS -->
-<div class="popup-overlay" id="popup-p1">
-  <div class="popup-box">
-    <div class="popup-header"><div><div class="popup-tag">Business Intelligence · Énergie</div><div class="popup-title">Analyse Production Biométhane 2013–2023</div></div><button class="popup-close" onclick="closePopup('p1')">✕</button></div>
-    <div class="popup-body">
-      <img class="popup-screenshot" src="cycle-biomethane.png" alt="Dashboard Biométhane"/>
-      <p class="popup-desc">Analyse complète de la production biométhane en France sur 10 ans. Dashboard Power BI interactif avec filtres par région, type de site et période.</p>
-      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">25,24K</div><div class="kpi-label">GWh produits</div></div><div class="kpi-card"><div class="kpi-num">39,7%</div><div class="kpi-label">Part Hauts-de-France</div></div><div class="kpi-card"><div class="kpi-num">21,39</div><div class="kpi-label">GWh/an (ind. territ.)</div></div></div>
-      <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Hauts-de-France</strong> concentre 39,7% de la production nationale, loin devant Grand Est (25%) et Pays de la Loire (10,7%).</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Le secteur <strong>Industriel territorial</strong> affiche 21,39 GWh/an par site, soit 72% de plus que les stations d'épuration.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Croissance continue jusqu'en <strong>2020</strong>, suivie d'une correction corrélée aux politiques énergétiques post-COVID.</div></div>
-    </div>
-    <div class="popup-footer"><a href="https://github.com/Crede241" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p1')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
-  </div>
-</div>
-
-<div class="popup-overlay" id="popup-p2">
-  <div class="popup-box">
-    <div class="popup-header"><div><div class="popup-tag">NLP · Analyse Textuelle</div><div class="popup-title">Analyse de Sentiments Multilingue avec BERT</div></div><button class="popup-close" onclick="closePopup('p2')">✕</button></div>
-    <div class="popup-body">
-      <img class="popup-screenshot" src="Sentiment analysis.png" alt="Analyse Sentiments"/>
-      <p class="popup-desc">Application web d'analyse automatique de retours clients multilingues (FR/EN). Modèle BERT multilingue (HuggingFace) pour classifier les avis et les convertir en catégories métier.</p>
-      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">125K</div><div class="kpi-label">Avis analysés</div></div><div class="kpi-card"><div class="kpi-num">94%</div><div class="kpi-label">Exactitude</div></div><div class="kpi-card"><div class="kpi-num">+34%</div><div class="kpi-label">Réactivité client</div></div></div>
-      <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Pipeline complet</strong> : ingestion → nettoyage → prédiction BERT → visualisation.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Extraction des mots-clés récurrents</strong> automatisée pour détecter les points d'amélioration.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python, Streamlit, Transformers (BERT), Pandas, Plotly.</div></div>
-    </div>
-    <div class="popup-footer"><a href="https://github.com/Crede241/Return-Coustemers-" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p2')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
-  </div>
-</div>
-
-<div class="popup-overlay" id="popup-p3">
-  <div class="popup-box">
-    <div class="popup-header"><div><div class="popup-tag">ELT DBT</div><div class="popup-title">Pipeline ELT pour l'analyse des sinistres</div></div><button class="popup-close" onclick="closePopup('p3')">✕</button></div>
-    <div class="popup-body">
-      <img class="popup-screenshot" src="Insurance.png" alt="ELT Assurance"/>
-      <p class="popup-desc">Pipeline ELT transformant des données brutes d'assurance en table analytique utilisée dans un dashboard Power BI.</p>
-      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Données RAW</div><div class="kpi-label">Stockées dans PostgreSQL</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Transformations</div><div class="kpi-label">Réalisées avec dbt</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Visualisation</div><div class="kpi-label">Dashboard Power BI</div></div></div>
-    </div>
-    <div class="popup-footer"><a href="https://github.com/Crede241/insurance_project" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p3')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
-  </div>
-</div>
-
-<!-- POPUP P4 -->
-<div class="popup-overlay" id="popup-p4">
-  <div class="popup-box">
-    <div class="popup-header">
-      <div>
-        <div class="popup-tag">Data Viz · Tableau Desktop</div>
-        <div class="popup-title">Dashboard Retours de Commande</div>
-      </div>
-      <button class="popup-close" onclick="closePopup('p4')">✕</button>
-    </div>
-    <div class="popup-body">
-      <img class="popup-screenshot" src="retour-article-marchandise.png"/>
-      <p class="popup-desc">Dashboard interactif d'analyse des retours clients.</p>
-    </div>
-    <div class="popup-footer">
-      <button onclick="closePopup('p4')" class="btn-dark">Fermer</button>
-    </div>
-  </div>
-</div>
-
-<!-- ✅ POPUP P5 (SORTI DE P4 = FIX PRINCIPAL) -->
-<div class="popup-overlay" id="popup-p5">
-  <div class="popup-box">
-    <div class="popup-header">
-      <div>
-        <div class="popup-tag">ETL Snowflake</div>
-        <div class="popup-title">Pipeline ETL Performance commerciale</div>
-      </div>
-      <!-- ✅ FIX bouton -->
-      <button class="popup-close" onclick="closePopup('p5')">✕</button>
-    </div>
-
-    <div class="popup-body">
-      <img class="popup-screenshot" src="png-clipart-computer.png"/>
-      <p class="popup-desc">
-        Pipeline ETL transformant des données de vente en dashboard Power BI.
-      </p>
-
-      <div class="popup-kpis">
-        <div class="kpi-card">
-          <div class="kpi-num" style="font-size:1rem;">Données Views</div>
-          <div class="kpi-label">Snowflake</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-num" style="font-size:1rem;">Transformations</div>
-          <div class="kpi-label">SQL</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-num" style="font-size:1rem;">Visualisation</div>
-          <div class="kpi-label">Power BI</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="popup-footer">
-      <button onclick="closePopup('p5')" class="btn-dark">Fermer</button>
-    </div>
-  </div>
-</div>
-</div>
 
 <!-- DEMOS -->
 <section id="demos">
