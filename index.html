@@ -502,30 +502,63 @@
   </div>
 </div>
 
+<!-- POPUP P4 -->
 <div class="popup-overlay" id="popup-p4">
   <div class="popup-box">
-    <div class="popup-header"><div><div class="popup-tag">Data Viz · Tableau Desktop</div><div class="popup-title">Dashboard Retours de Commande</div></div><button class="popup-close" onclick="closePopup('p4')">✕</button></div>
-    <div class="popup-body">
-      <img class="popup-screenshot" src="retour-article-marchandise.png" alt="Dashboard Retours de Commande"/>
-      <p class="popup-desc">Dashboard interactif d'analyse des retours clients par région, motif et canal de vente. Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop.</p>
-      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">2 000</div><div class="kpi-label">Retours analysés</div></div><div class="kpi-card"><div class="kpi-num">10</div><div class="kpi-label">Régions françaises</div></div><div class="kpi-card"><div class="kpi-num">7</div><div class="kpi-label">Motifs de retour</div></div></div>
-      <div class="popup-findings-title">Insights clés</div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>PACA</strong> concentre le coût le plus élevé avec 22 257 € sur "Mauvaise taille / couleur".</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Produit défectueux</strong> est le motif le plus récurrent en Auvergne-Rhône-Alpes et Pays de la Loire.</div></div>
-      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">La <strong>Normandie</strong> présente un pic sur les commandes en double (9 669 € pour 16 cas).</div></div>
+    <div class="popup-header">
+      <div>
+        <div class="popup-tag">Data Viz · Tableau Desktop</div>
+        <div class="popup-title">Dashboard Retours de Commande</div>
+      </div>
+      <button class="popup-close" onclick="closePopup('p4')">✕</button>
     </div>
-    <div class="popup-footer"><a href="https://github.com/Crede241/Global-superstore-return" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p4')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="retour-article-marchandise.png"/>
+      <p class="popup-desc">Dashboard interactif d'analyse des retours clients.</p>
+    </div>
+    <div class="popup-footer">
+      <button onclick="closePopup('p4')" class="btn-dark">Fermer</button>
+    </div>
   </div>
+</div>
 
-  <div class="popup-overlay" id="popup-p5">
+<!-- ✅ POPUP P5 (SORTI DE P4 = FIX PRINCIPAL) -->
+<div class="popup-overlay" id="popup-p5">
   <div class="popup-box">
-    <div class="popup-header"><div><div class="popup-tag">ETL Snowflake</div><div class="popup-title">Pipeline ETL Perfoamance commerciale</div></div><button class="popup-close" onclick="closePopup('p5')">Snowflake & Power BI</button></div>
-    <div class="popup-body">
-      <img class="popup-screenshot" src="png-clipart-computer.png" alt="ELT Commerce"/>
-      <p class="popup-desc">Pipeline ETL transformant des données brutes de vente  en table analytique utilisée dans un dashboard Power BI.</p>
-      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Données Views</div><div class="kpi-label">Stockées dans Snowflake</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Transformations</div><div class="kpi-label">Réalisées SQL</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Visualisation</div><div class="kpi-label">Dashboard Power BI</div></div></div>
+    <div class="popup-header">
+      <div>
+        <div class="popup-tag">ETL Snowflake</div>
+        <div class="popup-title">Pipeline ETL Performance commerciale</div>
+      </div>
+      <!-- ✅ FIX bouton -->
+      <button class="popup-close" onclick="closePopup('p5')">✕</button>
     </div>
-    <div class="popup-footer"><a href="#" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p5')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
+
+    <div class="popup-body">
+      <img class="popup-screenshot" src="png-clipart-computer.png"/>
+      <p class="popup-desc">
+        Pipeline ETL transformant des données de vente en dashboard Power BI.
+      </p>
+
+      <div class="popup-kpis">
+        <div class="kpi-card">
+          <div class="kpi-num" style="font-size:1rem;">Données Views</div>
+          <div class="kpi-label">Snowflake</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num" style="font-size:1rem;">Transformations</div>
+          <div class="kpi-label">SQL</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num" style="font-size:1rem;">Visualisation</div>
+          <div class="kpi-label">Power BI</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-footer">
+      <button onclick="closePopup('p5')" class="btn-dark">Fermer</button>
+    </div>
   </div>
 </div>
 </div>
