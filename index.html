@@ -439,6 +439,20 @@
         </div>
       </div>
     </div>
+    <div class="proj-card" onclick="openPopup('p5')">
+      <img class="proj-screenshot" src="analyse-commerciale-scaled.jpeg" alt="Analyse Performance Commerciale Monde"/>
+      <div class="proj-bottom">
+        <div class="proj-info">
+          <div class="proj-type">Data Engineering · Business Intelligence</div>
+          <h3 class="proj-title">Analyse de la Performance Commerciale Monde</h3>
+          <div class="proj-tags"><span class="ptag">Snowflake</span><span class="ptag">ETL</span><span class="ptag">Power BI</span></div>
+        </div>
+        <div class="proj-actions" onclick="event.stopPropagation()">
+          <button class="proj-btn proj-btn-results" onclick="openPopup('p5')">📊 Résultats</button>
+          <a class="proj-btn proj-btn-github" href="https://github.com/Crede241" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -477,11 +491,16 @@
 
 <div class="popup-overlay" id="popup-p3">
   <div class="popup-box">
-    <div class="popup-header"><div><div class="popup-tag">ELT DBT</div><div class="popup-title">Pipeline ELT pour l'analyse des sinistres</div></div><button class="popup-close" onclick="closePopup('p3')">✕</button></div>
+    <div class="popup-header"><div><div class="popup-tag">Data Engineering · Assurance</div><div class="popup-title">Pipeline ELT — Analyse des Sinistres</div></div><button class="popup-close" onclick="closePopup('p3')">✕</button></div>
     <div class="popup-body">
       <img class="popup-screenshot" src="Insurance.png" alt="ELT Assurance"/>
-      <p class="popup-desc">Pipeline ELT transformant des données brutes d'assurance en table analytique utilisée dans un dashboard Power BI.</p>
-      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Données RAW</div><div class="kpi-label">Stockées dans PostgreSQL</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Transformations</div><div class="kpi-label">Réalisées avec dbt</div></div><div class="kpi-card"><div class="kpi-num" style="font-size:1rem;">Visualisation</div><div class="kpi-label">Dashboard Power BI</div></div></div>
+      <p class="popup-desc">Pipeline ELT end-to-end transformant des données brutes de sinistres d'assurance en modèles analytiques exploitables dans un dashboard Power BI. Les données sont ingérées dans PostgreSQL, nettoyées et modélisées avec dbt, puis exposées à la couche de visualisation.</p>
+      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">4</div><div class="kpi-label">Modèles dbt (staging → mart)</div></div><div class="kpi-card"><div class="kpi-num">3</div><div class="kpi-label">Sources de données intégrées</div></div><div class="kpi-card"><div class="kpi-num">100%</div><div class="kpi-label">Tests dbt passés</div></div></div>
+      <div class="popup-findings-title">Outils & Architecture</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Extraction &amp; stockage</strong> : données brutes (polices, sinistres, clients) chargées dans <strong>PostgreSQL</strong> via Python (psycopg2).</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Transformation avec dbt</strong> : modèles en couches — <em>staging</em> (nettoyage, typage), <em>intermediate</em> (jointures), <em>mart</em> (table analytique finale) — avec tests d'unicité et de non-nullité.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Résultats Power BI</strong> : dashboard interactif exposant le taux de sinistralité par type de contrat, coût moyen par sinistre et délai moyen de traitement.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python · PostgreSQL · dbt Core · Power BI · Git.</div></div>
     </div>
     <div class="popup-footer"><a href="https://github.com/Crede241/insurance_project" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p3')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
   </div>
@@ -500,6 +519,24 @@
       <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">La <strong>Normandie</strong> présente un pic sur les commandes en double (9 669 € pour 16 cas).</div></div>
     </div>
     <div class="popup-footer"><a href="https://github.com/Crede241/Global-superstore-return" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p4')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup-p5">
+  <div class="popup-box">
+    <div class="popup-header"><div><div class="popup-tag">Data Engineering · Business Intelligence</div><div class="popup-title">Analyse de la Performance Commerciale Monde</div></div><button class="popup-close" onclick="closePopup('p5')">✕</button></div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="analyse-commerciale-scaled.jpeg" alt="Performance Commerciale Monde"/>
+      <p class="popup-desc">Pipeline ETL complet depuis des sources de données multi-régions (Afrique, Amérique, Asie, Europe) vers un entrepôt Snowflake, exposé dans un dashboard Power BI multi-onglets pour le pilotage de la performance commerciale mondiale.</p>
+      <div class="popup-kpis"><div class="kpi-card"><div class="kpi-num">1,18M €</div><div class="kpi-label">Ventes totales</div></div><div class="kpi-card"><div class="kpi-num">195 854 €</div><div class="kpi-label">Profit net</div></div><div class="kpi-card"><div class="kpi-num">4</div><div class="kpi-label">Régions analysées</div></div></div>
+      <div class="popup-findings-title">Outils & Architecture</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>ETL Python</strong> : extraction des données de ventes (magasins, vendeurs, régions), nettoyage et chargement dans <strong>Snowflake</strong> via le connecteur Python.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Modélisation Snowflake</strong> : schéma en étoile avec tables de faits (ventes, profits) et dimensions (magasin, vendeur, région, période).</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Dashboard Power BI</strong> multi-onglets avec filtres par continent — évolution du CA annuel 2021–2024, répartition des ventes par magasin (Berlin, Londres, Paris) et analyse H/F (57,6% Hommes · 42,4% Femmes).</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Insight clé</strong> : chute du CA européen en 2022 (−44%), reprise forte en 2023 (+55%) portée par les magasins de Berlin et Londres.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python · Snowflake · Power BI · SQL · Git.</div></div>
+    </div>
+    <div class="popup-footer"><a href="https://github.com/Crede241" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p5')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
   </div>
 </div>
 
@@ -526,6 +563,10 @@
     <div class="demo-card">
       <div class="demo-video-wrap"><iframe src="https://www.youtube.com/embed/QDHvfzoF3LQ" allowfullscreen></iframe></div>
       <div class="demo-info"><div class="demo-tag">Data Viz · Tableau Desktop</div><div class="demo-title">Dashboard interactif d'analyse des retours clients par région</div><div class="demo-desc">Données générées sur 12 mois (2 000 lignes), visualisées avec Tableau Desktop. Filtres dynamiques.</div></div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-video-wrap"><iframe src="https://www.youtube.com/embed/FElIYVz4TzI" allowfullscreen></iframe></div>
+      <div class="demo-info"><div class="demo-tag">Data Engineering · Snowflake · Power BI</div><div class="demo-title">Analyse de la Performance Commerciale Monde</div><div class="demo-desc">Pipeline ETL Snowflake, modélisation en étoile et navigation dans le dashboard Power BI multi-régions (Afrique, Amérique, Asie, Europe).</div></div>
     </div>
   </div>
 </section>
