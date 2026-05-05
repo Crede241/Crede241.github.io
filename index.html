@@ -453,6 +453,21 @@
         </div>
       </div>
     </div>
+    <div class="proj-card" onclick="openPopup('p6')" style="grid-column:span 2">
+      <img class="proj-screenshot" src="cables-sous-marins.svg" alt="Câbles Sous-Marins Intelligence"/>
+      <div class="proj-bottom">
+        <div class="proj-info">
+          <div class="proj-type">Data · Géopolitique · Cartographie Interactive</div>
+          <h3 class="proj-title">Câbles Sous-Marins — Intelligence Dashboard</h3>
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Streamlit</span><span class="ptag">Plotly</span><span class="ptag">TeleGeography API</span></div>
+        </div>
+        <div class="proj-actions" onclick="event.stopPropagation()">
+          <button class="proj-btn proj-btn-results" onclick="openPopup('p6')">📊 Résultats</button>
+          <a class="proj-btn proj-btn-github" href="https://submarine-cables-app.streamlit.app" target="_blank" style="background:rgba(0,212,255,.15);border-color:rgba(0,212,255,.5);color:#00d4ff;">🌐 Voir l'app</a>
+          <a class="proj-btn proj-btn-github" href="https://github.com/Crede241/submarine-cables-app" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -537,6 +552,32 @@
       <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python · Snowflake · Power BI · SQL · Git.</div></div>
     </div>
     <div class="popup-footer"><a href="https://github.com/Crede241" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">⌥ Voir sur GitHub</a><button onclick="closePopup('p5')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button></div>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup-p6">
+  <div class="popup-box">
+    <div class="popup-header"><div><div class="popup-tag">Data Viz · Géopolitique · Cartographie</div><div class="popup-title">Câbles Sous-Marins — Intelligence Dashboard</div></div><button class="popup-close" onclick="closePopup('p6')">✕</button></div>
+    <div class="popup-body">
+      <img class="popup-screenshot" src="cables-sous-marins.svg" alt="Câbles Sous-Marins"/>
+      <p class="popup-desc">Application Streamlit d'analyse géopolitique et cartographique des câbles sous-marins mondiaux. 99% du trafic internet transite par ces infrastructures critiques — cette app explore leur géographie, leurs acteurs et leurs vulnérabilités. Projet issu de mon expérience chez <strong>Alcatel Submarine Networks</strong>.</p>
+      <div class="popup-kpis">
+        <div class="kpi-card"><div class="kpi-num">693</div><div class="kpi-label">Câbles répertoriés</div></div>
+        <div class="kpi-card"><div class="kpi-num">1 910</div><div class="kpi-label">Points d'atterrissage</div></div>
+        <div class="kpi-card"><div class="kpi-num">4</div><div class="kpi-label">Dashboards interactifs</div></div>
+      </div>
+      <div class="popup-findings-title">Fonctionnalités</div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Carte mondiale interactive</strong> : visualisation des 1 910 points d'atterrissage géocodés, colorés par nombre de câbles ou par pays.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Évolution temporelle</strong> : histoire des déploiements par décennie, montée en puissance des GAFAM depuis 2016 face aux opérateurs historiques (Alcatel, Orange Marine…).</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Acteurs majeurs</strong> : top propriétaires, classification GAFAM / Télécoms / Consortiums, réseau de co-investisseurs.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Points critiques</strong> : carte de chaleur des hubs stratégiques (Marseille, Singapour, Alexandrie…) et score de vulnérabilité.</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Stack</strong> : Python · Streamlit · Plotly · Pandas · TeleGeography API · Nominatim geocoding · GitHub.</div></div>
+    </div>
+    <div class="popup-footer">
+      <a href="https://submarine-cables-app.streamlit.app" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;">🌐 Voir l'app live</a>
+      <a href="https://github.com/Crede241/submarine-cables-app" target="_blank" class="btn-primary" style="font-size:.8rem;padding:.6rem 1.4rem;background:var(--ink);border-color:var(--ink);">⌥ GitHub</a>
+      <button onclick="closePopup('p6')" class="btn-dark" style="font-size:.8rem;padding:.6rem 1.4rem;">Fermer</button>
+    </div>
   </div>
 </div>
 
